@@ -7,10 +7,10 @@
     colour = "primary",
   }: {
     content: string;
-    icon_left: string;
-    icon_right: string;
-    size: "small" | "medium" | "large";
-    colour: "primary" | "secondary" | "white";
+    icon_left?: string;
+    icon_right?: string;
+    size?: "small" | "medium" | "large";
+    colour?: "primary" | "secondary" | "white";
   } = $props();
 
   const colourClasses: { primary: string; secondary: string; white: string } = {
