@@ -31,25 +31,6 @@
   }
 
   a {
-    @apply text-[1rem] leading-[22px] font-display;
-
-    .url_animation {
-      --undo-distance: 7px;
-
-      display: inline-block;
-      padding-bottom: 2px;
-      background-image: linear-gradient(#000 0 0);
-      background-position: 2px calc(100% - var(--undo-distance));
-      background-size: 0% 1px;
-      background-repeat: no-repeat;
-      transition:
-        background-size 0.3s,
-        background-position 0s 0.3s;
-
-      &:hover {
-        background-position: 100% calc(100% - var(--undo-distance));
-        background-size: 100% 1px;
-      }
-    }
+    @apply text-[1rem] leading-[22px] font-display cursor-pointer;
   }
 }
