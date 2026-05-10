@@ -1,17 +1,27 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
+
   let {
-    content,
+    children,
     icon_left = "",
     icon_right = "",
     size = "small",
     colour = "primary",
+    onclick,
   }: {
-    content: string;
+    children?: Snippet;
     icon_left?: string;
     icon_right?: string;
     size?: "small" | "medium" | "large";
     colour?: "primary" | "secondary" | "white";
+    onclick?: () => any;
   } = $props();
+
+  const rotateClasses = {
+    none: "",
+    left: "-rotate-90",
+    right: "rotate-90",
+  };
 
   const colourClasses: { primary: string; secondary: string; white: string } = {
     primary: "bg-primary text-text-light",
@@ -26,12 +36,13 @@
   };
 </script>
 
-<button class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]}`}>
+<button {onclick} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]}`}>
   {#if icon_left}
-    <img src={icon_left} alt="" class="w-6 h-6" />
+    <img src={icon_left} alt="" class={`w-6 h-6`} />
   {/if}
-  <p class="font-semibold">{content}</p>
+  <!-- <p class="font-semibold">{content}</p> -->
+  {@render children?.()}
   {#if icon_right}
-    <img src={icon_right} alt="" class="w-6 h-6" />
+    <img src={icon_right} alt="" class={`w-6 h-6`} />
   {/if}
 </button>
