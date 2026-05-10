@@ -26,7 +26,7 @@
   };
 </script>
 
-<button class={`flex rounded ${colourClasses[colour]} ${sizeClasses[size]}`}>
+<button class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]}`}>
   {#if icon_left}
     <img src={icon_left} alt="" class="w-6 h-6" />
   {/if}
