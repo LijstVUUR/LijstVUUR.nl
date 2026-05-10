@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="absolute -bottom-4 left-4 opacity-10">
+    <div class="absolute -bottom-4 left-4 opacity-10 hidden lg:block">
       <img src={Logo} alt="" />
     </div>
   </div>
