@@ -1,6 +1,11 @@
-<footer class="text-text-light bg-red-1 flex flex-wrap justify-between w-full py-12 px-12 md:px-20 xl:px-24 xl:py-16">
-    <img src=""/>
-    <div class="flex flex-wrap gap-12">
+<script lang="ts">
+    import logo from "$lib/assets/logo/logo_color_white.svg";
+
+</script>
+
+<footer class="text-text-light bg-red-1 flex flex-wrap justify-between gap-y-4 w-full py-12 px-12 md:px-20 xl:px-24 xl:py-16">
+    <img src={logo} class="h-full"/>
+    <div class="flex flex-wrap gap-x-12 gap-y-8">
     <div class="flex flex-col gap-2">
       <h2>Contact</h2>
       <a href="mailto:bestuur@verenigingvuur.nl" class="underline">bestuur@verenigingvuur.nl</a>
