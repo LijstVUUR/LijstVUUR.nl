@@ -5,6 +5,7 @@
   import Block from "$lib/components/Block.svelte";
   import Standpunt from "$lib/components/Standpunt.svelte";
   import Button from "$lib/components/Button.svelte";
+  import Banner from "$lib/components/Banner.svelte";
 
   let gallery: HTMLElement;
 
@@ -16,13 +17,15 @@
   }
 </script>
 
+<Banner></Banner>
+
 <Block>
   <div class="flex flex-col gap-16 pt-16 pb-8 lg:flex-row overflow-visible">
     <div id="textual_content" class="flex flex-col gap-4 flex-1">
       <h1>Onze standpunten</h1>
       <div class="flex flex-col gap-2">
-        <p class="font-bold">We vertegenwoordigen het studentenperspectief binnen de universiteit, en zorgen dat de student wordt gehoord: niet beleid over, maar met studenten.</p>
-        <p>Lijst VUUR is een progressieve studentenpartij die zich inzet voor hoge kwaliteit van het onderwijs: actueel, inclusief en vernieuwend. We zetten ons in voor een universiteit die toegankelijk is voor iedereen – ongeacht achtergrond, identiteit of omstandigheden. We willen een democratische academische gemeenschap die verantwoordelijkheid neemt voor mens, maatschappij en klimaat.<br /><br />Een omgeving met verschillende perspectieven, waar ruimte is voor verwondering, debat en activisme. Dat is wat waar we voor staan.</p>
+        <p class="font-bold max-w-[60ch]">We vertegenwoordigen het studentenperspectief binnen de universiteit, en zorgen dat de student wordt gehoord: niet beleid over, maar met studenten.</p>
+        <p class="max-w-[60ch]">Lijst VUUR is een progressieve studentenpartij die zich inzet voor hoge kwaliteit van het onderwijs: actueel, inclusief en vernieuwend. We zetten ons in voor een universiteit die toegankelijk is voor iedereen – ongeacht achtergrond, identiteit of omstandigheden. We willen een democratische academische gemeenschap die verantwoordelijkheid neemt voor mens, maatschappij en klimaat.<br /><br />Een omgeving met verschillende perspectieven, waar ruimte is voor verwondering, debat en activisme. Dat is wat waar we voor staan.</p>
       </div>
 
       <Button size="medium">
