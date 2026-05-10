@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { i18n } from "$lib/i18n";
+	import { ParaglideJS } from "@inlang/paraglide-sveltekit";
 	import '../app.css';
 	import Footer from '$lib/components/Footer.svelte';
 	
 	let { children } = $props();
 </script>
 
-{@render children()}
+<ParaglideJS {i18n}>
+	{@render children()}
 
 
-<Footer />
+	<Footer></Footer>
+</ParaglideJS>
