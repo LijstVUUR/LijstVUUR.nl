@@ -32,8 +32,7 @@ export default {
         underlineScroll: 'underlineScroll 0.2s linear forwards',
       },
     },
-
-    plugins: [],
-  }
+  },
+  plugins: [],
 } satisfies Config;
 
