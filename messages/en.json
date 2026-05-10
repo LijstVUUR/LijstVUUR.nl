@@ -1,9 +1,18 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from nl!",
   "vision_digital_autonomy": "DIGITAL<br>AUTONOMY",
   "vision_abolish_4_0": "ABOLISH<br>THE 4.0 RULE",
   "vision_inclusive_policy": "EXPAND<br>INCLUSIVE<br>POLICY",
   "vision_end_bsa": "PUT AN<br>END TO BSA",
-  "vision_protect_protesting": "PROTECT<br>PROTESTING"
+  "vision_protect_protesting": "PROTECT<br>PROTESTING",
+  "vision_title": "Our vision",
+  "vision_intro_bold": "We represent the students’ perspective within the university and ensure that students’ voices are heard: policy should be made not about students, but with them.",
+  "vision_about_vuur": "Lijst VUUR is a progressive student party committed to high-quality education: up-to-date, inclusive and innovative. We are dedicated to a university that is accessible to everyone – regardless of background, identity or circumstances. We want a democratic academic community that takes responsibility for people, society and the climate. <br/><br/> An environment with diverse perspectives, where there is room for wonder, debate and activism. That is what we stand for.",
+  "vision_cta_button": "Read our full vision",
+  "contact_form_title": "Want to know more?",
+  "contact_form_description": "Do you have any questions about the party, the vision, or anything else? Ask your question here and we’ll get back to you as soon as possible!",
+  "contact_form_email": "Email*",
+  "contact_form_input": "What can we help you with?*",
+  "contact_form_input_placeholder": "I want to know more about...",
+  "contact_form_submit": "Submit"
 }

@@ -7,6 +7,7 @@
   import Standpunt from "$lib/components/Standpunt.svelte";
   import Button from "$lib/components/Button.svelte";
   import Banner from "$lib/components/Banner.svelte";
+  import LanguageToggle from "$lib/components/LanguageToggle.svelte";
 
   let gallery: HTMLElement;
 
@@ -31,18 +32,20 @@
 
 <Banner></Banner>
 
+<LanguageToggle></LanguageToggle>
+
 <!-- STANDPUNTEN -->
 <Block>
   <div class="flex flex-col gap-16 pt-16 pb-8 lg:flex-row overflow-visible">
     <div id="textual_content" class="flex flex-col gap-4 flex-1">
-      <h1>Onze standpunten</h1>
+      <h1>{m.vision_title()}</h1>
       <div class="flex flex-col gap-2">
-        <p class="font-bold max-w-[60ch]">We vertegenwoordigen het studentenperspectief binnen de universiteit, en zorgen dat de student wordt gehoord: niet beleid over, maar met studenten.</p>
-        <p class="max-w-[60ch]">Lijst VUUR is een progressieve studentenpartij die zich inzet voor hoge kwaliteit van het onderwijs: actueel, inclusief en vernieuwend. We zetten ons in voor een universiteit die toegankelijk is voor iedereen – ongeacht achtergrond, identiteit of omstandigheden. We willen een democratische academische gemeenschap die verantwoordelijkheid neemt voor mens, maatschappij en klimaat.<br /><br />Een omgeving met verschillende perspectieven, waar ruimte is voor verwondering, debat en activisme. Dat is wat waar we voor staan.</p>
+        <p class="font-bold max-w-[60ch]">{m.vision_intro_bold()}</p>
+        <p class="max-w-[60ch]">{@html m.vision_about_vuur()}</p>
       </div>
 
       <Button size="medium">
-        <p class="font-medium">Lees ons programma</p>
+        <p class="font-medium">{m.vision_cta_button()}</p>
       </Button>
     </div>
 
@@ -70,29 +73,29 @@
 <Block>
   <div class="relative flex flex-col gap-4 pt-16 pb-8 lg:my-16 lg:bg-red-1 lg:flex-row lg:px-8 lg:py-8 lg:text-text-light lg:rounded">
     <div class="flex flex-col gap-4 flex-1">
-      <h2>Meer weten?</h2>
-      <p class="max-w-[50ch]">Heb je vragen over de partij, het programma, of iets anders? Stel hier je vraag en dan komen we zo snel mogelijk bij je terug!</p>
+      <h2>{m.contact_form_title()}</h2>
+      <p class="max-w-[50ch]">{m.contact_form_description()}</p>
     </div>
 
     <div class="flex flex-col gap-4 w-full lg:flex-1">
       <div class="input_field">
-        <label>Email*</label>
+        <label>{m.contact_form_email()}</label>
         <input type="text" name="name" placeholder="john@doe.com" bind:value={email} required />
       </div>
       <div class="input_field">
-        <label>Waar kunnen we je mee helpen?*</label>
-        <textarea name="company" placeholder="Ik zou graag..." class="h-24 lg:h-52" bind:value={message} required></textarea>
+        <label>{m.contact_form_description()}</label>
+        <textarea name="company" placeholder={m.contact_form_input_placeholder()} class="h-24 lg:h-52" bind:value={message} required></textarea>
       </div>
       <div class="self-end">
         <div class="hidden lg:block">
           <Button size="medium" colour="secondary" onclick={submit}>
-            <p class="font-medium">Versturen</p>
+            <p class="font-medium">{m.contact_form_submit()}</p>
           </Button>
         </div>
 
         <div class="lg:hidden">
           <Button size="medium" onclick={submit}>
-            <p class="font-medium">Versturen</p>
+            <p class="font-medium">{m.contact_form_submit()}</p>
           </Button>
         </div>
       </div>

@@ -1,9 +1,18 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from nl!",
-  "vision_digital_autonomy": "DIGITAL<br>AUTONOMY",
-  "vision_abolish_4_0": "ABOLISH<br>THE 4.0 RULE",
-  "vision_inclusive_policy": "EXPAND<br>INCLUSIVE<br>POLICY",
-  "vision_end_bsa": "PUT AN<br>END TO BSA",
-  "vision_protect_protesting": "PROTECT<br>PROTESTING"
+  "vision_digital_autonomy": "DIGITALE<br>AUTONOMIE",
+  "vision_abolish_4_0": "AFSCHAFFEN VAN<br>DE 4.0 REGEL",
+  "vision_inclusive_policy": "[TODO] EXPAND<br>INCLUSIVE<br>POLICY",
+  "vision_end_bsa": "[TODO] PUT AN<br>END TO BSA",
+  "vision_protect_protesting": "[TODO] PROTECT<br>PROTESTING",
+  "vision_title": "Onze standpunten",
+  "vision_intro_bold": "We vertegenwoordigen het studentenperspectief binnen de  universiteit, en zorgen dat de student wordt gehoord: niet beleid over,  maar met studenten.",
+  "vision_about_vuur": "Lijst VUUR is een progressieve  studentenpartij die zich inzet voor hoge kwaliteit van het onderwijs:  actueel, inclusief en vernieuwend. We zetten ons in voor een  universiteit die toegankelijk is voor iedereen – ongeacht achtergrond,  identiteit of omstandigheden. We willen een democratische academische  gemeenschap die verantwoordelijkheid neemt voor mens, maatschappij en  klimaat. <br/><br/> Een omgeving met verschillende perspectieven, waar ruimte is voor  verwondering, debat en activisme. Dat is wat waar we voor staan.",
+  "vision_cta_button": "Lees ons programma",
+  "contact_form_title": "Meer weten?",
+  "contact_form_description": "Heb je vragen over de partij, het programma, of iets anders? Stel hier je vraag en dan komen we zo snel mogelijk bij je terug!",
+  "contact_form_email": "Email*",
+  "contact_form_input": "Waar kunnen we je mee helpen?*",
+  "contact_form_input_placeholder": "Ik wil meer weten over...",
+  "contact_form_submit": "Versturen"
 }
