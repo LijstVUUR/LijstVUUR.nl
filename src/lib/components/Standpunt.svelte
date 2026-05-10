@@ -2,7 +2,7 @@
   let { title = "", img_src = "" } = $props();
 </script>
 
-<div id="wrapper" class="relative rounded-md overflow-clip">
+<div id="wrapper" class="relative rounded-md overflow-clip w-128 w-fit">
   <img src={img_src} alt="" class="w-128" />
 
   <div id="content" class="absolute bottom-4 left-4 flex flex-col gap-2">

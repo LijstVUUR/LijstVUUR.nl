@@ -1,4 +1,9 @@
 {
-	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from nl!"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "hello_world": "Hello, {name} from nl!",
+  "vision_digital_autonomy": "DIGITAL<br>AUTONOMY",
+  "vision_abolish_4_0": "ABOLISH<br>THE 4.0 RULE",
+  "vision_inclusive_policy": "EXPAND<br>INCLUSIVE<br>POLICY",
+  "vision_end_bsa": "PUT AN<br>END TO BSA",
+  "vision_protect_protesting": "PROTECT<br>PROTESTING"
 }
