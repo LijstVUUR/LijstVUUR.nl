@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as m from "$lib/paraglide/messages.js";
   import Arrow from "$lib/assets/icons/arrow.svg";
+  import Logo from "$lib/assets/logo/logo_color_no_text.svg";
 
   import Block from "$lib/components/Block.svelte";
   import Standpunt from "$lib/components/Standpunt.svelte";
@@ -15,10 +16,22 @@
     const totalWidth = cardWidth + cardPadding;
     gallery.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
   }
+
+  let email = $state("");
+  let message = $state("");
+
+  function submit() {
+    const board_email = "bestuur@verenigingvuur.nl";
+    const title = "Vraag via website";
+    const body = `I have a question about VUUR:\n` + message;
+    const mailto = `mailto:${board_email}?subject=${title}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  }
 </script>
 
 <Banner></Banner>
 
+<!-- STANDPUNTEN -->
 <Block>
   <div class="flex flex-col gap-16 pt-16 pb-8 lg:flex-row overflow-visible">
     <div id="textual_content" class="flex flex-col gap-4 flex-1">
@@ -52,3 +65,56 @@
     </div>
   </div>
 </Block>
+
+<!-- CONTACT FORM -->
+<Block>
+  <div class="relative flex flex-col gap-4 pt-16 pb-8 lg:my-16 lg:bg-red-1 lg:flex-row lg:px-8 lg:py-8 lg:text-text-light lg:rounded">
+    <div class="flex flex-col gap-4 flex-1">
+      <h2>Meer weten?</h2>
+      <p class="max-w-[50ch]">Heb je vragen over de partij, het programma, of iets anders? Stel hier je vraag en dan komen we zo snel mogelijk bij je terug!</p>
+    </div>
+
+    <div class="flex flex-col gap-4 w-full lg:flex-1">
+      <div class="input_field">
+        <label>Email*</label>
+        <input type="text" name="name" placeholder="john@doe.com" bind:value={email} required />
+      </div>
+      <div class="input_field">
+        <label>Waar kunnen we je mee helpen?*</label>
+        <textarea name="company" placeholder="Ik zou graag..." class="h-24 lg:h-52" bind:value={message} required></textarea>
+      </div>
+      <div class="self-end">
+        <div class="hidden lg:block">
+          <Button size="medium" colour="secondary" onclick={submit}>
+            <p class="font-medium">Versturen</p>
+          </Button>
+        </div>
+
+        <div class="lg:hidden">
+          <Button size="medium" onclick={submit}>
+            <p class="font-medium">Versturen</p>
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute -bottom-4 left-4 opacity-10">
+      <img src={Logo} alt="" />
+    </div>
+  </div>
+</Block>
+
+<style lang="postcss">
+  .input_field {
+    @apply flex flex-col gap-1 flex-1;
+
+    label {
+      @apply text-[1rem] leading-[22px] font-display font-bold;
+    }
+
+    input,
+    textarea {
+      @apply px-4 pt-3 pb-[10px] rounded w-full placeholder-support-grey font-display border border-[#666666];
+    }
+  }
+</style>
