@@ -6,6 +6,7 @@
   import Button from "./Button.svelte";
 
   import * as m from "$lib/paraglide/messages.js";
+  import ButtonLink from "./ButtonLink.svelte";
 </script>
 
 <header class="  box-border w-full h-16 md:h-20 lg:h-24 px-6 md:px-16 lg:px-24 py-2 bg-bg-light text-text-dark flex flex-row justify-between items-center">
@@ -27,7 +28,7 @@
         <li><LanguageToggle /></li>
         <li>
           <div class="hidden lg:block">
-            <Button size="medium"><a href="https://www.uu.nl/vote" class=" text-sm">{m.header_cta()}</a></Button>
+            <ButtonLink size="medium" href="https://www.uu.nl/vote" class=" text-sm">{m.header_cta()}</ButtonLink>
           </div>
           <div class="lg:hidden">
             <Button size="medium" colour="secondary"><a href="https://www.uu.nl/vote" class="text-sm">{m.header_cta()}</a></Button>

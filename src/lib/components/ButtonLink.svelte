@@ -1,14 +1,14 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  
-  interface Props extends HTMLButtonAttributes{
+  import type { HTMLAnchorAttributes } from "svelte/elements";
+
+  interface Props extends HTMLAnchorAttributes{
     children?: Snippet;
     icon_left?: string;
     icon_right?: string;
     size?: "small" | "medium" | "large";
     colour?: "primary" | "secondary" | "white";
-    onclick?: () => any;
+    href?: string;
   }
 
   let {
@@ -17,10 +17,10 @@
     icon_right = "",
     size = "small",
     colour = "primary",
-    onclick,
+    href,
     class:className,
     ...props
-  }: Props = $props();
+  }:Props = $props();
 
   const rotateClasses = {
     none: "",
@@ -41,7 +41,7 @@
   };
 </script>
 
-<button {onclick} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`} {...props}>
+<a {href} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`} {...props}>
   {#if icon_left}
     <img src={icon_left} alt="" class={`w-6 h-6`} />
   {/if}
@@ -50,4 +50,4 @@
   {#if icon_right}
     <img src={icon_right} alt="" class={`w-6 h-6`} />
   {/if}
-</button>
+</a>
