@@ -1,0 +1,177 @@
+{
+  "u_council": [
+    {
+      "name": "Puk Donken",
+      "degree": {
+        "nl": "BA Sociologie",
+        "en": "BA Sociology"
+      },
+      "img_src": "/images_unopt/people/Puk.jpg",
+      "linkedin": "https://www.linkedin.com/in/puk-donken-008611211/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Paolo Dioni",
+      "degree": {
+        "nl": "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
+        "en": "MSc Theoretical Physics & MSc History and Philosophy "
+      },
+      "img_src": "/images_unopt/people/Paolo.png",
+      "linkedin": "https://www.linkedin.com/in/paolodioni/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Du Nguyen",
+      "degree": {
+        "nl": "BA Geschiedenis & BSc Biologie",
+        "en": "BA History & BSc Biology"
+      },
+      "img_src": "/images_unopt/people/Du.jpg",
+      "linkedin": "https://www.linkedin.com/in/du-nguyen-1b1a50268/",
+      "instagram": null,
+      "utrecht": ""
+    }
+  ],
+  "beta_faculty": [
+    {
+      "name": "Puk Donken",
+      "degree": {
+        "nl": "BA Sociologie",
+        "en": "BA Sociology"
+      },
+      "img_src": "/images_unopt/people/Puk.jpg",
+      "linkedin": "https://www.linkedin.com/in/puk-donken-008611211/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Paolo Dioni",
+      "degree": {
+        "nl": "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
+        "en": "MSc Theoretical Physics & MSc History and Philosophy "
+      },
+      "img_src": "/images_unopt/people/Paolo.png",
+      "linkedin": "https://www.linkedin.com/in/paolodioni/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Du Nguyen",
+      "degree": {
+        "nl": "BA Geschiedenis & BSc Biologie",
+        "en": "BA History & BSc Biology"
+      },
+      "img_src": "/images_unopt/people/Du.jpg",
+      "linkedin": "https://www.linkedin.com/in/du-nguyen-1b1a50268/",
+      "instagram": null,
+      "utrecht": ""
+    }
+  ],
+  "gw_faculty": [
+    {
+      "name": "Puk Donken",
+      "degree": {
+        "nl": "BA Sociologie",
+        "en": "BA Sociology"
+      },
+      "img_src": "/images_unopt/people/Puk.jpg",
+      "linkedin": "https://www.linkedin.com/in/puk-donken-008611211/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Paolo Dioni",
+      "degree": {
+        "nl": "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
+        "en": "MSc Theoretical Physics & MSc History and Philosophy "
+      },
+      "img_src": "/images_unopt/people/Paolo.png",
+      "linkedin": "https://www.linkedin.com/in/paolodioni/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Du Nguyen",
+      "degree": {
+        "nl": "BA Geschiedenis & BSc Biologie",
+        "en": "BA History & BSc Biology"
+      },
+      "img_src": "/images_unopt/people/Du.jpg",
+      "linkedin": "https://www.linkedin.com/in/du-nguyen-1b1a50268/",
+      "instagram": null,
+      "utrecht": ""
+    }
+  ],
+  "rebo_faculty": [
+    {
+      "name": "Puk Donken",
+      "degree": {
+        "nl": "BA Sociologie",
+        "en": "BA Sociology"
+      },
+      "img_src": "/images_unopt/people/Puk.jpg",
+      "linkedin": "https://www.linkedin.com/in/puk-donken-008611211/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Paolo Dioni",
+      "degree": {
+        "nl": "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
+        "en": "MSc Theoretical Physics & MSc History and Philosophy "
+      },
+      "img_src": "/images_unopt/people/Paolo.png",
+      "linkedin": "https://www.linkedin.com/in/paolodioni/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Du Nguyen",
+      "degree": {
+        "nl": "BA Geschiedenis & BSc Biologie",
+        "en": "BA History & BSc Biology"
+      },
+      "img_src": "/images_unopt/people/Du.jpg",
+      "linkedin": "https://www.linkedin.com/in/du-nguyen-1b1a50268/",
+      "instagram": null,
+      "utrecht": ""
+    }
+  ],
+  "fsw_faculty": [
+    {
+      "name": "Puk Donken",
+      "degree": {
+        "nl": "BA Sociologie",
+        "en": "BA Sociology"
+      },
+      "img_src": "/images_unopt/people/Puk.jpg",
+      "linkedin": "https://www.linkedin.com/in/puk-donken-008611211/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Paolo Dioni",
+      "degree": {
+        "nl": "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
+        "en": "MSc Theoretical Physics & MSc History and Philosophy "
+      },
+      "img_src": "/images_unopt/people/Paolo.png",
+      "linkedin": "https://www.linkedin.com/in/paolodioni/",
+      "instagram": null,
+      "utrecht": ""
+    },
+    {
+      "name": "Du Nguyen",
+      "degree": {
+        "nl": "BA Geschiedenis & BSc Biologie",
+        "en": "BA History & BSc Biology"
+      },
+      "img_src": "/images_unopt/people/Du.jpg",
+      "linkedin": "https://www.linkedin.com/in/du-nguyen-1b1a50268/",
+      "instagram": null,
+      "utrecht": ""
+    }
+  ]
+}
