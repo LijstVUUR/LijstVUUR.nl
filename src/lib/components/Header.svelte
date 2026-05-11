@@ -28,7 +28,7 @@
         <li><LanguageToggle /></li>
         <li>
           <div class="hidden lg:block">
-            <ButtonLink size="medium" href="https://www.uu.nl/vote" class=" text-sm">{m.header_cta()}</ButtonLink>
+            <ButtonLink target="_blank" size="medium" href="https://www.uu.nl/vote" class=" text-sm">{m.header_cta()}</ButtonLink>
           </div>
           <div class="lg:hidden">
             <Button size="medium" colour="secondary"><a href="https://www.uu.nl/vote" class="text-sm">{m.header_cta()}</a></Button>
