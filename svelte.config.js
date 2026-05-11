@@ -9,7 +9,8 @@ const config = {
 
   kit: {
     adapter: adapter({
-      fallback: null  // no SPA fallback, true static
+      fallback: null,  // no SPA fallback, true static
+      trailingSlash: "never"
     }),
     prerender: {
       entries: ['*']  // prerender all routes
