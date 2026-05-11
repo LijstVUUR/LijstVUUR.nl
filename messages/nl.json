@@ -14,5 +14,9 @@
   "contact_form_email": "Email*",
   "contact_form_input": "Waar kunnen we je mee helpen?*",
   "contact_form_input_placeholder": "Ik wil meer weten over...",
-  "contact_form_submit": "Versturen"
+  "contact_form_submit": "Versturen",
+  "header_home": "home",
+  "header_election_programme": "verkiezingsprogramma",
+  "header_candidates": "onze mensen",
+  "header_cta": "Stem VUUR"
 }

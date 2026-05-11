@@ -4,6 +4,8 @@
   import MenuClose from "$lib/assets/icons/MenuClose.svelte";
   import LanguageToggle from "./LanguageToggle.svelte";
   import Button from "./Button.svelte";
+
+  import * as m from "$lib/paraglide/messages.js";
 </script>
 
 <header class="  box-border w-full h-16 md:h-20 lg:h-24 px-6 md:px-16 lg:px-24 py-2 bg-bg-light text-text-dark flex flex-row justify-between items-center">
@@ -19,16 +21,16 @@
     </label>
     <div class="hidden peer-checked:block peer-checked:box-border peer-checked:w-full peer-checked:h-full peer-checked:absolute peer-checked:inset-x-0 peer-checked:inset-y-16 peer-checked:md:inset-y-20 peer-checked:py-16 peer-checked:bg-red-1 peer-checked:text-text-light peer-checked:z-10 peer-checked: transition-transform peer-checked: duration-300 peer-checked: ease-out lg:block">
       <ul class="font-extrabold uppercase flex flex-col lg:flex-row gap-12 items-center">
-        <li><a href="/">Home</a></li>
-        <li><a href="/election-programme">Election programme</a></li>
-        <li><a href="/our-people">Our people</a></li>
+        <li><a href="/">{m.header_home()}</a></li>
+        <li><a href="/election-programme">{m.header_election_programme()}</a></li>
+        <li><a href="/our-people">{m.header_candidates()}</a></li>
         <li><LanguageToggle /></li>
         <li>
           <div class="hidden lg:block">
-            <Button size="medium"><a href="https://www.uu.nl/vote" class=" text-sm">Vote VUUR</a></Button>
+            <Button size="medium"><a href="https://www.uu.nl/vote" class=" text-sm">{m.header_cta()}</a></Button>
           </div>
           <div class="lg:hidden">
-            <Button size="medium" colour="secondary"><a href="https://www.uu.nl/vote" class="text-sm">Vote VUUR</a></Button>
+            <Button size="medium" colour="secondary"><a href="https://www.uu.nl/vote" class="text-sm">{m.header_cta()}</a></Button>
           </div>
         </li>
       </ul>

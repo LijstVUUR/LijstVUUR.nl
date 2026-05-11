@@ -14,5 +14,9 @@
   "contact_form_email": "Email*",
   "contact_form_input": "What can we help you with?*",
   "contact_form_input_placeholder": "I want to know more about...",
-  "contact_form_submit": "Submit"
+  "contact_form_submit": "Submit",
+  "header_home": "home",
+  "header_election_programme": "election programme",
+  "header_candidates": "our people",
+  "header_cta": "Vote VUUR"
 }
