@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as m from "$lib/paraglide/messages.js";
-  import Arrow from "$lib/assets/icons/arrow.svg";
+  import Arrow from "$lib/assets/icons/Arrow.svelte";
   import Logo from "$lib/assets/logo/logo_color_no_text.svg";
 
   import Block from "$lib/components/Block.svelte";
@@ -57,10 +57,11 @@
       </div>
       <div class="flex w-full justify-between">
         <Button size="medium" onclick={() => scroll("left")}>
-          <img src={Arrow} alt="" class="-rotate-90" />
+        <Arrow class="-rotate-90 w-6 h-6"/>
         </Button>
         <Button size="medium" onclick={() => scroll("right")}>
-          <img src={Arrow} alt="" class="rotate-90" />
+        <Arrow class="rotate-90 w-6 h-6"/>
+        
         </Button>
       </div>
     </div>
