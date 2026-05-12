@@ -12,9 +12,9 @@
     <div class="flex flex-col gap-2">
       <h2>{m.footer_contact()}</h2>
       <a href="mailto:bestuur@verenigingvuur.nl" class="underline">bestuur@verenigingvuur.nl</a>
-      <div class="flex flex-row gap-4 h-11">
-        <a target="_blank" href="https://www.linkedin.com/company/vuur"><LinkedIn /></a>
-        <a target="_blank" href="https://www.instagram.com/vuurlijst"><Instagram /></a>
+      <div class="flex gap-4">
+        <a class="w-11 h-11" target="_blank" href="https://www.linkedin.com/company/vuur"><LinkedIn /></a>
+        <a class="w-11 h-11" target="_blank" href="https://www.instagram.com/vuurlijst"><Instagram /></a>
       </div>
     </div>
     <div class="flex flex-col">
