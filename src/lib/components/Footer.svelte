@@ -30,12 +30,11 @@
     <div class="flex flex-col gap-2">
       <h2>{m.footer_people()}</h2>
       <ul class="flex flex-col gap-2">
-        <li><a href="">{m.footer_ucouncil()}</a></li>
-        <li><a href="">{m.footer_beta()}</a></li>
-        <li><a href="">{m.footer_gw()}</a></li>
-        <li><a href="">{m.footer_rebo()}</a></li>
-        <li><a href="">{m.footer_fsw()}</a></li>
-        <li><a href="">{m.footer_board()}</a></li>
+        <li><a href="u_council">{m.footer_ucouncil()}</a></li>
+        <li><a href="beta">{m.footer_beta()}</a></li>
+        <li><a href="gw">{m.footer_gw()}</a></li>
+        <li><a href="rebo">{m.footer_rebo()}</a></li>
+        <li><a href="fsw">{m.footer_fsw()}</a></li>
       </ul>
     </div>
   </div>
