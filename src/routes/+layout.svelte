@@ -4,6 +4,7 @@
   import "../app.css";
   import Footer from "$lib/components/Footer.svelte";
   import Header from "$lib/components/Header.svelte";
+  import LanguageToggle from "$lib/components/LanguageToggle.svelte";
 
   let { children } = $props();
 </script>
@@ -14,4 +15,12 @@
     {@render children()}
   </div>
   <Footer />
+
+  <div
+    class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center xl:hidden"
+  >
+    <div class="flex items-center justify-center leading-none">
+      <LanguageToggle />
+    </div>
+  </div>
 </ParaglideJS>
