@@ -13,12 +13,12 @@
 </script>
 
 <header
-  class="  box-border w-full h-16 md:h-20 lg:h-24 px-6 md:px-16 lg:px-24 py-2 bg-bg-light text-text-dark flex flex-row justify-between items-center"
+  class="  box-border w-full h-16 md:h-20 lg:h-24 px-6 md:px-16 xl:px-24 py-2 bg-bg-light text-text-dark flex flex-row justify-between items-center"
 >
   <a class="h-full w-auto" href="/">
     <img src={logo} alt="VUUR logo full color" class="h-full w-auto" />
   </a>
-  <nav class="flex flex-row gap-12">
+  <nav class="flex flex-row">
     <input
       id="menu-active"
       type="checkbox"
