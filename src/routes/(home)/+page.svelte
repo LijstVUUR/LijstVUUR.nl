@@ -30,8 +30,6 @@
   }
 </script>
 
-<Banner></Banner>
-
 <!-- STANDPUNTEN -->
 <Block>
   <div class="flex flex-col gap-16 pt-16 pb-8 lg:flex-row overflow-visible">

@@ -2,19 +2,13 @@
   import { i18n } from "$lib/i18n";
   import { ParaglideJS } from "@inlang/paraglide-sveltekit";
   import "../app.css";
-  import Footer from "$lib/components/Footer.svelte";
-  import Header from "$lib/components/Header.svelte";
   import LanguageToggle from "$lib/components/LanguageToggle.svelte";
 
   let { children } = $props();
 </script>
 
 <ParaglideJS {i18n}>
-  <Header />
-  <div class="overflow-hidden">
-    {@render children()}
-  </div>
-  <Footer />
+      {@render children()}
 
   <div
     class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center xl:hidden"
