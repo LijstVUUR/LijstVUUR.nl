@@ -12,8 +12,8 @@
 </script>
 
 
-<div class="w-full h-fit flex flex-row items-center justify-between">
-    <a class="w-auto text-[2.5rem] font-sans capitalize" href="/">
+<div class="w-full flex flex-row items-center justify-between">
+    <a class="text-[2.5rem] font-sans capitalize" href="/">
         Lijst Vuur
     </a>
     <nav class="flex flex-row">
@@ -37,7 +37,7 @@
       <MenuClose />
     </label>
     <div
-      class="hidden peer-checked:block peer-checked:box-border peer-checked:w-full peer-checked:h-screen peer-checked:z-10 peer-checked:absolute peer-checked:inset-x-0 peer-checked:inset-y-16 peer-checked:md:inset-y-20 peer-checked:py-16 peer-checked:bg-red-1 peer-checked:text-text-light peer-checked:z-10 peer-checked: transition-transform peer-checked: duration-300 peer-checked: ease-out lg:block"
+      class="hidden peer-checked:block peer-checked:box-border peer-checked:w-full peer-checked:h-screen peer-checked:z-10 peer-checked:absolute peer-checked:inset-x-0 peer-checked:inset-y-16 peer-checked:md:inset-y-20 peer-checked:py-16 peer-checked:bg-red-1 peer-checked:text-text-light peer-checked:z-10 peer-checked: transition-transform peer-checked: duration-300 peer-checked: ease-out lg:block h-fit"
     >
       <ul
         class="font-extrabold uppercase flex flex-col lg:flex-row gap-12 items-center"
