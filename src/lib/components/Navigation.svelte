@@ -49,7 +49,6 @@
           >
         </li>
         <li><a href="/our-people" onclick={c}>{m.header_candidates()}</a></li>
-        <li class="hidden lg:block"><LanguageToggle /></li>
         <li>
           <div class="hidden lg:block">
             <ButtonLink

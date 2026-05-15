@@ -11,7 +11,7 @@
       {@render children()}
 
   <div
-    class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center xl:hidden"
+    class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center"
   >
     <div class="flex items-center justify-center leading-none">
       <LanguageToggle />
