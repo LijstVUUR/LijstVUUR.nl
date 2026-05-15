@@ -6,17 +6,42 @@
   import Block from "$lib/components/Block.svelte";
   import Standpunt from "$lib/components/Standpunt.svelte";
   import Button from "$lib/components/Button.svelte";
-  import Banner from "$lib/components/Banner.svelte";
-  import LanguageToggle from "$lib/components/LanguageToggle.svelte";
+  
+  import * as People from "$lib/assets/OurPeople.json";
   import ButtonLink from "$lib/components/ButtonLink.svelte";
+  import Person from "$lib/components/Person.svelte";
+
+  type Person = {
+    name: string;
+    degree: { nl: string; en: string };
+    img_src: string;
+    linkedin: string;
+    instagram: string;
+    utrecht: string;
+  };
+
+  const u_council = People.u_council as any as Person[];
+  const beta = People.beta_faculty as any as Person[];
+  const gw = People.gw_faculty as any as Person[];
+  const rebo = People.rebo_faculty as any as Person[];
+  const fsw = People.fsw_faculty as any as Person[];
+
 
   let gallery: HTMLElement;
+  let galleryPeople: HTMLElement;
 
   function scroll(direction: "left" | "right") {
     const cardWidth = gallery.firstElementChild?.clientWidth ?? 0;
     const cardPadding = 32;
     const totalWidth = cardWidth + cardPadding;
     gallery.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
+  }
+
+  function scrollPeople(direction: "left" | "right") {
+    const cardWidth = galleryPeople.firstElementChild?.clientWidth ?? 0;
+    const cardPadding = 16;
+    const totalWidth = cardWidth + cardPadding;
+    galleryPeople.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
   }
 
   let email = $state("");
@@ -66,6 +91,35 @@
     </div>
   </div>
 </Block>
+
+<!-- PEOPLE -->
+<Block>
+  <div class="group rounded-lg overflow-hidden flex flex-col items-center lg:gap-8 lg:px-4 lg:py-16 bg-secondary hover:bg-red-1 transition-all duration-600 ease-in-out">
+    <div class="flex flex-col lg:gap-6 items-center">
+      <h2 class="group-hover:text-text-light">Our people</h2>
+      <Button>DROPDOWN</Button>
+    </div>
+     <div class="flex flex-col gap-4 flex-1 min-w-0">
+    <div bind:this={galleryPeople} class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      {#each u_council as member}
+          <Person colour="light" variant="bordered" orientation="portrait" person={member} />
+      {/each}
+    </div>
+    <div class="flex w-fit items-center gap-4">
+      <ButtonLink href="/our-people">All our people</ButtonLink>
+       <div class="flex gap-2">
+        <Button size="medium" onclick={() => scrollPeople("left")}>
+          <Arrow class="-rotate-90 w-6 h-6"/>
+        </Button>
+        <Button size="medium" onclick={() => scrollPeople("right")}>
+          <Arrow class="rotate-90 w-6 h-6"/>
+        </Button>
+      </div>
+    </div>
+    </div>
+  </div>
+</Block>
+
 
 <!-- CONTACT FORM -->
 <Block>

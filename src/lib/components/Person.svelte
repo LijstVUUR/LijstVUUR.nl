@@ -20,7 +20,7 @@
   let degree_localised = $derived(person.degree[languageTag()]);
 </script>
 
-<div id="wrapper" class="w-full bg-bg-{colour} rounded overflow-hidden flex {orientation} {variant}">
+<div id="wrapper" class="relative shrink-0 bg-bg-{colour} rounded overflow-hidden flex {orientation} {variant}">
   <img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full object-cover object-top aspect-[4/5]" />
 
   <div id="text" class="w-full flex flex-col flex-1">
@@ -75,7 +75,7 @@
   }
 
   .portrait{
-    @apply flex-col h-full min-w-[200px];
+    @apply flex-col w-[256px] h-[400px];
   }
 
   .landscape{

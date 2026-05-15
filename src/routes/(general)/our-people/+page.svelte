@@ -50,7 +50,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {#each list.people as member}
-          <Person colour="beige" variant="bordered" orientation="portrait" person={member} />
+          <Person colour="beige" variant="bordered" orientation="landscape" person={member} />
         {/each}
       </div>
     </div>
