@@ -6,15 +6,15 @@
 
   import * as m from "$lib/paraglide/messages.js";
   import ButtonLink from "./ButtonLink.svelte";
-
+  
   let isOpen = false;
   const c = () => (isOpen = false);
 </script>
 
 
 <div class="w-full flex flex-row items-center justify-between">
-    <a class="text-[2.5rem] font-sans capitalize" href="/">
-        Lijst Vuur
+    <a class="h-full flex flex-row items-center gap-4" href="/">
+        <p class="leading-[0.8] text-[2.5rem] font-sans capitalize">Lijst Vuur</p>
     </a>
     <nav class="flex flex-row">
     <input
