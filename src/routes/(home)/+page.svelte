@@ -8,6 +8,7 @@
   import Button from "$lib/components/Button.svelte";
   import Banner from "$lib/components/Banner.svelte";
   import LanguageToggle from "$lib/components/LanguageToggle.svelte";
+  import ButtonLink from "$lib/components/ButtonLink.svelte";
 
   let gallery: HTMLElement;
 
@@ -40,9 +41,9 @@
         <p class="max-w-[60ch]">{@html m.vision_about_vuur()}</p>
       </div>
 
-      <Button size="medium">
+      <ButtonLink href="/election-programme" size="medium">
         <p class="font-medium">{m.vision_cta_button()}</p>
-      </Button>
+      </ButtonLink>
     </div>
 
     <div class="flex flex-col gap-4 flex-1 min-w-0">
