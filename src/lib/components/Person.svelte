@@ -87,13 +87,12 @@
   }
 
   .ripple {
-    @apply absolute top-1/2 left-1/2 w-0 h-0 bg-primary;
+    @apply absolute top-1/2 left-1/2 w-0 h-0 bg-primary z-0;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition:
       width 0.5s ease,
       height 0.5s ease;
-    z-index: 0;
   }
 
   #wrapper.landscape {

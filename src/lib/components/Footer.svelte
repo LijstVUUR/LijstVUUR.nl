@@ -6,7 +6,7 @@
   import * as m from "$lib/paraglide/messages.js";
 </script>
 
-<footer class="text-text-light bg-red-1 flex flex-col lg:flex-row flex-wrap items-start justify-between gap-y-4 w-full py-12 px-12 md:px-20 xl:px-24 xl:py-16">
+<footer class="text-text-light bg-red-1 flex flex-col xl:flex-row flex-wrap items-start justify-between gap-4 w-full py-12 px-12 md:px-20 xl:px-24 xl:py-16">
   <img src={logo} alt="VUUR logo white with colored flame" class="h-full" />
   <div class="flex flex-wrap gap-x-12 gap-y-8">
     <div class="flex flex-col gap-2">
