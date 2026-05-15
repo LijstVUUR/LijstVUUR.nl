@@ -1,20 +1,22 @@
 <script lang="ts">
-  import { i18n } from "$lib/i18n";
-  import { ParaglideJS } from "@inlang/paraglide-sveltekit";
+  import LanguageToggle from "$src/lib/components/LanguageToggle.svelte";
   import "../app.css";
-  import LanguageToggle from "$lib/components/LanguageToggle.svelte";
 
   let { children } = $props();
 </script>
 
-<ParaglideJS {i18n}>
-      {@render children()}
+<!-- <nav class="locale-switcher" aria-label="Languages">
+  {#each locales as locale}
+    <a href={resolve(localizeHref(page.url.pathname, { locale }))} data-sveltekit-reload>
+      {locale}
+    </a>
+  {/each}
+</nav> -->
 
-  <div
-    class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center"
-  >
-    <div class="flex items-center justify-center leading-none">
-      <LanguageToggle />
-    </div>
+{@render children()}
+
+<div class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center">
+  <div class="flex items-center justify-center leading-none">
+    <LanguageToggle />
   </div>
-</ParaglideJS>
+</div>

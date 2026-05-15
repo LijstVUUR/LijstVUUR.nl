@@ -14,6 +14,9 @@ const config = {
     }),
     prerender: {
       entries: ['*']  // prerender all routes
+    },
+    alias: {
+      $src: 'src'
     }
   }
 };

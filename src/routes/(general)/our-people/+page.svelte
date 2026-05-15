@@ -1,30 +1,26 @@
 <script lang="ts">
   import Person from "$lib/components/Person.svelte";
-  import * as People from "$lib/assets/OurPeople.json";
+  // import * as People from "$lib/assets/OurPeople.json";
   import Block from "$lib/components/Block.svelte";
   import ButtonLink from "$lib/components/ButtonLink.svelte";
+  import { lists } from "$lib/assets/People";
 
-  type Person = {
-    name: string;
-    degree: { nl: string; en: string };
-    img_src: string;
-    linkedin: string;
-    instagram: string;
-    utrecht: string;
-  };
-
-  const u_council = People.u_council as any as Person[];
-  const beta = People.beta_faculty as any as Person[];
-  const gw = People.gw_faculty as any as Person[];
-  const rebo = People.rebo_faculty as any as Person[];
-  const fsw = People.fsw_faculty as any as Person[];
+  const u_council = lists.u_council;
+  // const beta = People.beta_faculty as any as Person[];
+  // const gw = People.gw_faculty as any as Person[];
+  // const rebo = People.rebo_faculty as any as Person[];
+  // const fsw = People.fsw_faculty as any as Person[];
+  const beta = [] as Person[];
+  const gw = [] as Person[];
+  const rebo = [] as Person[];
+  const fsw = [] as Person[];
 
   const full_list = [
     { title: "Universiteitsraad", description: "Description yet to come", people: u_council, scroll: "u_council" },
-    { title: "Faculteit BETA", description: "Description yet to come", people: beta, scroll: "beta" },
-    { title: "Faculteit GW", description: "Description yet to come", people: gw, scroll: "gw" },
-    { title: "Faculteit REBO", description: "Description yet to come", people: rebo, scroll: "rebo" },
-    { title: "Faculteit FSW", description: "Description yet to come", people: fsw, scroll: "fsw" },
+    // { title: "Faculteit BETA", description: "Description yet to come", people: beta, scroll: "beta" },
+    // { title: "Faculteit GW", description: "Description yet to come", people: gw, scroll: "gw" },
+    // { title: "Faculteit REBO", description: "Description yet to come", people: rebo, scroll: "rebo" },
+    // { title: "Faculteit FSW", description: "Description yet to come", people: fsw, scroll: "fsw" },
   ];
 
   function scrollTo(id: string) {
@@ -49,7 +45,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        {#each list.people as member}
+        {#each list.people.candidates as member}
           <Person colour="beige" variant="bordered" orientation="landscape" person={member} />
         {/each}
       </div>

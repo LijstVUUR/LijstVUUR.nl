@@ -3,7 +3,7 @@
   import LinkedIn from "$lib/assets/icons/social/LinkedIn.svelte";
   import Instagram from "$lib/assets/icons/social/Instagram.svelte";
 
-  import * as m from "$lib/paraglide/messages.js";
+  import * as m from "$src/paraglide/messages.js";
 </script>
 
 <footer class="text-text-light bg-red-1 flex flex-col xl:flex-row flex-wrap items-start justify-between gap-4 w-full py-12 px-12 md:px-20 xl:px-24 xl:py-16">

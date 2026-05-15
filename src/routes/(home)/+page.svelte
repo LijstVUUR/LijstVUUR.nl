@@ -1,31 +1,22 @@
 <script lang="ts">
-  import * as m from "$lib/paraglide/messages.js";
+  import * as m from "$src/paraglide/messages.js";
   import Arrow from "$lib/assets/icons/Arrow.svelte";
   import Logo from "$lib/assets/logo/logo_color_no_text.svg";
 
   import Block from "$lib/components/Block.svelte";
   import Standpunt from "$lib/components/Standpunt.svelte";
   import Button from "$lib/components/Button.svelte";
-  
+
   import * as People from "$lib/assets/OurPeople.json";
   import ButtonLink from "$lib/components/ButtonLink.svelte";
   import Person from "$lib/components/Person.svelte";
+  import type { Candidate } from "$lib/assets/People.js";
 
-  type Person = {
-    name: string;
-    degree: { nl: string; en: string };
-    img_src: string;
-    linkedin: string;
-    instagram: string;
-    utrecht: string;
-  };
-
-  const u_council = People.u_council as any as Person[];
-  const beta = People.beta_faculty as any as Person[];
-  const gw = People.gw_faculty as any as Person[];
-  const rebo = People.rebo_faculty as any as Person[];
-  const fsw = People.fsw_faculty as any as Person[];
-
+  const u_council = People.u_council as any as Candidate[];
+  const beta = People.beta_faculty as any as Candidate[];
+  const gw = People.gw_faculty as any as Candidate[];
+  const rebo = People.rebo_faculty as any as Candidate[];
+  const fsw = People.fsw_faculty as any as Candidate[];
 
   let gallery: HTMLElement;
   let galleryPeople: HTMLElement;
@@ -81,11 +72,10 @@
       </div>
       <div class="flex w-full justify-between">
         <Button size="medium" onclick={() => scroll("left")}>
-        <Arrow class="-rotate-90 w-6 h-6"/>
+          <Arrow class="-rotate-90 w-6 h-6" />
         </Button>
         <Button size="medium" onclick={() => scroll("right")}>
-        <Arrow class="rotate-90 w-6 h-6"/>
-        
+          <Arrow class="rotate-90 w-6 h-6" />
         </Button>
       </div>
     </div>
@@ -99,27 +89,26 @@
       <h2 class="group-hover:text-text-light">Our people</h2>
       <Button>DROPDOWN</Button>
     </div>
-     <div class="flex flex-col gap-4 flex-1 min-w-0">
-    <div bind:this={galleryPeople} class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-      {#each u_council as member}
+    <div class="flex flex-col gap-4 flex-1 min-w-0">
+      <div bind:this={galleryPeople} class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {#each u_council as member}
           <Person colour="light" variant="bordered" orientation="portrait" person={member} />
-      {/each}
-    </div>
-    <div class="flex w-fit items-center gap-4">
-      <ButtonLink href="/our-people">All our people</ButtonLink>
-       <div class="flex gap-2">
-        <Button size="medium" onclick={() => scrollPeople("left")}>
-          <Arrow class="-rotate-90 w-6 h-6"/>
-        </Button>
-        <Button size="medium" onclick={() => scrollPeople("right")}>
-          <Arrow class="rotate-90 w-6 h-6"/>
-        </Button>
+        {/each}
       </div>
-    </div>
+      <div class="flex w-fit items-center gap-4">
+        <ButtonLink href="/our-people">All our people</ButtonLink>
+        <div class="flex gap-2">
+          <Button size="medium" onclick={() => scrollPeople("left")}>
+            <Arrow class="-rotate-90 w-6 h-6" />
+          </Button>
+          <Button size="medium" onclick={() => scrollPeople("right")}>
+            <Arrow class="rotate-90 w-6 h-6" />
+          </Button>
+        </div>
+      </div>
     </div>
   </div>
 </Block>
-
 
 <!-- CONTACT FORM -->
 <Block>

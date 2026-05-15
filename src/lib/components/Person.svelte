@@ -2,20 +2,10 @@
   import Instagram from "$lib/assets/icons/social/Instagram.svelte";
   import LinkedIn from "$lib/assets/icons/social/LinkedIn.svelte";
   import UU from "$lib/assets/icons/social/UU.svelte";
-  import { languageTag } from "$lib/paraglide/runtime";
-  type Person = {
-    name: string;
-    degree: {
-      nl: string;
-      en: string;
-    };
-    img_src: string;
-    linkedin: string;
-    instagram: string;
-    utrecht: string;
-  };
-  let { colour = "light", orientation = "portrait", variant = "bordered", person }: { colour?: "beige" | "light"; orientation?: "landscape" | "portrait"; variant?: "bordered" | "borderless"; person: Person } = $props();
-  let degree_localised = $derived(person.degree[languageTag()]);
+  import type { Candidate } from "$lib/assets/People";
+
+  let { colour = "light", orientation = "portrait", variant = "bordered", person }: { colour?: "beige" | "light"; orientation?: "landscape" | "portrait"; variant?: "bordered" | "borderless"; person: Candidate } = $props();
+  let degree_localised = "en";
   const colourClasses: { beige: string; light: string } = {
     beige: "bg-bg-beige",
     light: "bg-bg-light",
@@ -26,8 +16,10 @@
   {#if orientation === "landscape"}
     <div class="ripple"></div>
   {/if}
-  <img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full object-cover object-top aspect-[4/5] relative z-10" />
-  <div id="text" class="w-full flex flex-col flex-1 relative z-10">
+  <div id="img" class=" relative z-10">
+    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full w-full object-cover object-top aspect-[4/5]"></enhanced:img>
+  </div>
+  <div id="text" class="w-full flex flex-col shrink-0 relative z-10">
     <div class="flex flex-col gap-1">
       <h3>{person.name}</h3>
       <p>{degree_localised}</p>
@@ -41,7 +33,6 @@
             </div>
           </a>
         {/if}
-
         {#if person.instagram}
           <a href={person.instagram}>
             <div class="w-6 h-6">
@@ -49,7 +40,6 @@
             </div>
           </a>
         {/if}
-
         {#if person.utrecht}
           <a href={person.utrecht}>
             <div class="w-6 h-6">
@@ -63,25 +53,30 @@
 </div>
 
 <style lang="postcss">
-  .bordered.portrait img {
-    @apply pt-2 pb-0 px-2;
+  .bordered.portrait #img {
+    @apply pt-2 pb-0 px-2 flex-1 min-h-0;
   }
-  .bordered.landscape img {
-    @apply py-2 pl-2 pr-0;
+  .bordered.landscape #img {
+    @apply py-2 pl-2 pr-0 w-1/3 shrink-0;
   }
+
   .borderless.portrait,
   .borderless.landscape {
     @apply py-0 px-0;
   }
+
   .portrait {
     @apply flex-col w-[256px] h-[400px];
   }
+
   .landscape {
     @apply flex-row h-[220px];
   }
+
   .portrait #text {
     @apply py-4 px-4 gap-2;
   }
+
   .landscape #text {
     @apply py-4 pl-4 pr-8 justify-between;
   }
@@ -102,7 +97,7 @@
       @apply text-text-light;
 
       .ripple {
-        @apply w-[600px] h-[600px];
+        @apply w-[800px] h-[800px];
       }
     }
   }
