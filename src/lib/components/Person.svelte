@@ -18,9 +18,14 @@
   let { colour = "light", orientation = "portrait", variant = "bordered", person }: { colour?: "beige" | "light", orientation?: "landscape" | "portrait", variant?: "bordered" | "borderless"; person: Person } = $props();
 
   let degree_localised = $derived(person.degree[languageTag()]);
+
+  const colourClasses: { beige: string; light: string; } = {
+    beige: "bg-bg-beige",
+    light: "bg-bg-light",
+  };
 </script>
 
-<div id="wrapper" class="relative shrink-0 bg-bg-{colour} rounded overflow-hidden flex {orientation} {variant}">
+<div id="wrapper" class={`relative shrink-0 rounded overflow-hidden flex ${orientation} ${variant} ${colourClasses[colour]}`}>
   <img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full object-cover object-top aspect-[4/5]" />
 
   <div id="text" class="w-full flex flex-col flex-1">
@@ -54,7 +59,6 @@
         </a>
         {/if}
       </div>
-      <a href="/">Lees meer</a>
     </div>
   </div>
 </div>
@@ -89,5 +93,6 @@
   .landscape #text{
     @apply py-4 pl-4 pr-8 justify-between;
   }
+
 
 </style>
