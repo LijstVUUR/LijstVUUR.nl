@@ -15,43 +15,79 @@
     instagram: string;
     utrecht: string;
   };
-  let { variant = "border", person }: { variant?: "border" | "borderless"; person: Person } = $props();
+  let { colour = "light", orientation = "portrait", variant = "bordered", person }: { colour?: "beige" | "light", orientation?: "landscape" | "portrait", variant?: "bordered" | "borderless"; person: Person } = $props();
 
   let degree_localised = $derived(person.degree[languageTag()]);
 </script>
 
-<div id="wrapper" class="w-full rounded overflow-hidden h-[500px] flex flex-col bg-bg-beige">
-  <img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full object-cover object-top" />
+<div id="wrapper" class="w-full bg-bg-{colour} rounded overflow-hidden flex {orientation} {variant}">
+  <img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full object-cover object-top aspect-[4/5]" />
 
-  <div class="flex flex-col gap-2 flex-1 p-4">
+  <div id="text" class="w-full flex flex-col flex-1">
     <div class="flex flex-col gap-1">
       <h3>{person.name}</h3>
       <p>{degree_localised}</p>
     </div>
-    <div class="flex gap-2">
-      {#if person.linkedin}
+    <div class="w-full flex justify-between items-center">
+      <div class="flex gap-2 items-center">
+        {#if person.linkedin}
         <a href={person.linkedin}>
           <div class="w-6 h-6">
             <LinkedIn />
           </div>
         </a>
-      {/if}
-
-      {#if person.instagram}
+        {/if}
+        
+        {#if person.instagram}
         <a href={person.instagram}>
           <div class="w-6 h-6">
             <Instagram />
           </div>
         </a>
-      {/if}
-
-      {#if person.utrecht}
+        {/if}
+        
+        {#if person.utrecht}
         <a href={person.utrecht}>
           <div class="w-6 h-6">
             <UU />
           </div>
         </a>
-      {/if}
+        {/if}
+      </div>
+      <a href="/">Lees meer</a>
     </div>
   </div>
 </div>
+
+
+<style lang="postcss">
+  .bordered.portrait img {
+    @apply pt-2 pb-0 px-2;
+  }
+
+  .bordered.landscape img {
+    @apply py-2 pl-2 pr-0;
+  }
+
+  .borderless.portrait,
+  .borderless.landscape {
+    @apply py-0 px-0;
+  }
+
+  .portrait{
+    @apply flex-col h-full min-w-[200px];
+  }
+
+  .landscape{
+    @apply flex-row h-[220px];
+  }
+
+  .portrait #text{
+    @apply py-4 px-4 gap-2;
+  }
+
+  .landscape #text{
+    @apply py-4 pl-4 pr-8 justify-between;
+  }
+
+</style>
