@@ -3,9 +3,10 @@
   import LinkedIn from "$lib/assets/icons/social/LinkedIn.svelte";
   import UU from "$lib/assets/icons/social/UU.svelte";
   import type { Candidate } from "$lib/assets/People";
+  import { getLocale } from "../paraglide/runtime";
 
   let { colour = "light", orientation = "portrait", variant = "bordered", person }: { colour?: "beige" | "light"; orientation?: "landscape" | "portrait"; variant?: "bordered" | "borderless"; person: Candidate } = $props();
-  let degree_localised = "en";
+  let degree_localised = person.degree[getLocale()];
   const colourClasses: { beige: string; light: string } = {
     beige: "bg-bg-beige",
     light: "bg-bg-light",
@@ -17,9 +18,9 @@
     <div class="ripple"></div>
   {/if}
   <div id="img" class=" relative z-10">
-    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top"></enhanced:img>
+    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top" width="220" height="220"></enhanced:img>
   </div>
-  <div id="text" class="w-full flex flex-col shrink-0 relative z-10">
+  <div id="text" class="flex flex-col relative z-10">
     <div class="flex flex-col gap-1">
       <h3>{person.name}</h3>
       <p>{degree_localised}</p>
@@ -27,21 +28,21 @@
     <div class="w-full flex justify-between items-center">
       <div class="flex gap-2 items-center">
         {#if person.linkedin}
-          <a href={person.linkedin}>
+          <a target="_blank" href={person.linkedin}>
             <div class="w-6 h-6">
               <LinkedIn />
             </div>
           </a>
         {/if}
         {#if person.instagram}
-          <a href={person.instagram}>
+          <a target="_blank" href={person.instagram}>
             <div class="w-6 h-6">
               <Instagram />
             </div>
           </a>
         {/if}
         {#if person.utrecht}
-          <a href={person.utrecht}>
+          <a target="_blank" href={person.utrecht}>
             <div class="w-6 h-6">
               <UU />
             </div>
