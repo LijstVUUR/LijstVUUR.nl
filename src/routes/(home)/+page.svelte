@@ -11,6 +11,7 @@
   import ButtonLink from "$lib/components/ButtonLink.svelte";
   import Person from "$lib/components/Person.svelte";
   import type { Candidate } from "$lib/assets/People.js";
+  import { localizeHref } from "$src/lib/paraglide/runtime";
 
   const u_council = People.u_council as any as Candidate[];
   const beta = People.beta_faculty as any as Candidate[];
@@ -25,7 +26,10 @@
     const cardWidth = parentGallery.firstElementChild?.clientWidth ?? 0;
     const cardPadding = 32;
     const totalWidth = cardWidth + cardPadding;
-    parentGallery.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
+    parentGallery.scrollBy({
+      left: direction === "left" ? -totalWidth : totalWidth,
+      behavior: "smooth",
+    });
   }
 
   let email = $state("");
@@ -56,12 +60,30 @@
     </div>
 
     <div class="flex flex-col gap-4 flex-1 min-w-0">
-      <div bind:this={gallery} class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        <Standpunt title={m.vision_digital_autonomy()} img_src="/images_unopt/digital_autonomy.png" />
-        <Standpunt title={m.vision_abolish_4_0()} img_src="/images_unopt/4_rule.png" />
-        <Standpunt title={m.vision_inclusive_policy()} img_src="/images_unopt/inclusive_policy.png" />
-        <Standpunt title={m.vision_end_bsa()} img_src="/images_unopt/end_bsa.png" />
-        <Standpunt title={m.vision_protect_protesting()} img_src="/images_unopt/protect_protesting.png" />
+      <div
+        bind:this={gallery}
+        class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      >
+        <Standpunt
+          title={m.vision_digital_autonomy()}
+          img_src="/images_unopt/digital_autonomy.png"
+        />
+        <Standpunt
+          title={m.vision_abolish_4_0()}
+          img_src="/images_unopt/4_rule.png"
+        />
+        <Standpunt
+          title={m.vision_inclusive_policy()}
+          img_src="/images_unopt/inclusive_policy.png"
+        />
+        <Standpunt
+          title={m.vision_end_bsa()}
+          img_src="/images_unopt/end_bsa.png"
+        />
+        <Standpunt
+          title={m.vision_protect_protesting()}
+          img_src="/images_unopt/protect_protesting.png"
+        />
       </div>
       <div class="flex w-full justify-between">
         <Button size="medium" onclick={() => scroll("left", gallery)}>
@@ -77,31 +99,62 @@
 
 <!-- PEOPLE -->
 <Block>
-  <div class="group rounded-md overflow-hidden flex flex-col items-center py-8 md:py-16 px-6 lg:px-12 md:px-8 gap-8 bg-red-1 lg:bg-secondary hover:bg-red-1 transition-all duration-600 ease-in-out">
-    <div class="flex flex-col lg:gap-6 items-center">
-      <h2 class="text-text-light lg:text-text-dark group-hover:text-text-light">Our people</h2>
+  <div
+    class="people group relative rounded-md overflow-hidden flex flex-col items-center py-8 md:py-16 px-6 lg:px-12 md:px-8 gap-8 bg-red-1 lg:bg-secondary"
+  >
+    <div class="ripple"></div>
+
+    <div class="flex flex-col lg:gap-6 items-center relative z-10">
+      <h2 class="header text-text-light lg:text-text-dark">Our people</h2>
       <Button>DROPDOWN</Button>
     </div>
-      <div bind:this={galleryPeople} class="w-full lg:w-fit flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        {#each u_council as member}
-          <Person colour="light" variant="bordered" orientation="portrait" person={member} />
-        {/each}
-      </div>
-      <div class="flex w-full lg:w-fit items-center justify-between">
-        <Button class="lg:hidden" colour="white" size="small" onclick={() => scroll("left", galleryPeople)}>
-          <Arrow class="-rotate-90 h-5" />
-        </Button>
-        <ButtonLink size="small" colour="primary" class="h-full group-hover:bg-secondary group-hover:text-text-dark" href="/our-people">All our people</ButtonLink>
-        <Button class="lg:hidden" colour="white" size="small" onclick={() => scroll("right", galleryPeople)}>
-          <Arrow class="rotate-90 h-5" />
-        </Button>
-        </div>
-      </div>
+    <div
+      bind:this={galleryPeople}
+      class="w-full lg:w-fit flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative z-10"
+    >
+      {#each u_council as member}
+        <Person
+          colour="light"
+          variant="bordered"
+          orientation="portrait"
+          person={member}
+        />
+      {/each}
+    </div>
+    <div
+      class="flex w-full lg:w-fit items-center justify-between relative z-10"
+    >
+      <Button
+        class="lg:hidden"
+        colour="white"
+        size="small"
+        onclick={() => scroll("left", galleryPeople)}
+      >
+        <Arrow class="-rotate-90 h-5" />
+      </Button>
+      <ButtonLink
+        class="h-full lg:bg-primary lg:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
+        size="small"
+        colour="secondary"
+        href={localizeHref("/our-people")}>All our people</ButtonLink
+      >
+      <Button
+        class="lg:hidden"
+        colour="white"
+        size="small"
+        onclick={() => scroll("right", galleryPeople)}
+      >
+        <Arrow class="rotate-90 h-5" />
+      </Button>
+    </div>
+  </div>
 </Block>
 
 <!-- CONTACT FORM -->
 <Block>
-  <div class="relative flex flex-col gap-4 pt-16 pb-8 lg:my-16 lg:bg-red-1 lg:flex-row lg:px-8 lg:py-8 lg:text-text-light lg:rounded-md">
+  <div
+    class="relative flex flex-col gap-4 pt-16 pb-8 lg:my-16 lg:bg-red-1 lg:flex-row lg:px-8 lg:py-8 lg:text-text-light lg:rounded-md"
+  >
     <div class="flex flex-col gap-4 flex-1">
       <h2>{m.contact_form_title()}</h2>
       <p class="max-w-[50ch]">{m.contact_form_description()}</p>
@@ -110,11 +163,23 @@
     <div class="flex flex-col gap-4 w-full lg:flex-1">
       <div class="input_field">
         <label>{m.contact_form_email()}</label>
-        <input type="text" name="name" placeholder="john@doe.com" bind:value={email} required />
+        <input
+          type="text"
+          name="name"
+          placeholder="john@doe.com"
+          bind:value={email}
+          required
+        />
       </div>
       <div class="input_field">
         <label>{m.contact_form_description()}</label>
-        <textarea name="company" placeholder={m.contact_form_input_placeholder()} class="h-24 lg:h-52" bind:value={message} required></textarea>
+        <textarea
+          name="company"
+          placeholder={m.contact_form_input_placeholder()}
+          class="h-24 lg:h-52"
+          bind:value={message}
+          required
+        ></textarea>
       </div>
       <div class="self-end">
         <div class="hidden lg:block">
@@ -148,6 +213,33 @@
     input,
     textarea {
       @apply px-4 pt-3 pb-[10px] rounded w-full placeholder-support-grey font-display border border-[#666666];
+    }
+  }
+
+  .ripple {
+    @apply absolute top-1/2 left-1/2 w-0 h-0 bg-primary z-0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.8s ease,
+      height 0.8s ease;
+  }
+
+  .button-link a {
+    @apply bg-secondary text-text-dark h-full lg:bg-primary lg:text-text-light;
+  }
+
+  .people {
+    transition: color 0.5s ease;
+
+    &:hover {
+      .ripple {
+        @apply w-[1600px] h-[1600px];
+      }
+
+      .header {
+        @apply text-text-light;
+      }
     }
   }
 </style>

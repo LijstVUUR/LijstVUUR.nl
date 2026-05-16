@@ -3,7 +3,7 @@
   import type { HTMLAnchorAttributes } from "svelte/elements";
   import { localizeHref } from "../paraglide/runtime";
 
-  interface Props extends HTMLAnchorAttributes{
+  interface Props extends HTMLAnchorAttributes {
     children?: Snippet;
     icon_left?: string;
     icon_right?: string;
@@ -19,9 +19,9 @@
     size = "small",
     colour = "primary",
     href = "",
-    class:className,
+    class: className,
     ...props
-  }:Props = $props();
+  }: Props = $props();
 
   const rotateClasses = {
     none: "",
@@ -42,7 +42,11 @@
   };
 </script>
 
-<a href={localizeHref(href)} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`} {...props}>
+<a
+  href={localizeHref(href)}
+  class={`${className} flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]}`}
+  {...props}
+>
   {#if icon_left}
     <img src={icon_left} alt="" class={`w-6 h-6`} />
   {/if}
