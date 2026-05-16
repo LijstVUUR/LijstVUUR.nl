@@ -21,27 +21,9 @@
     class:className,
     ...props
   }: Props = $props();
-
-  const rotateClasses = {
-    none: "",
-    left: "-rotate-90",
-    right: "rotate-90",
-  };
-
-  const colourClasses: { primary: string; secondary: string; white: string } = {
-    primary: "bg-primary text-text-light",
-    secondary: "bg-secondary text-text-dark",
-    white: "bg-support-white text-text-dark",
-  };
-
-  const sizeClasses: { small: string; medium: string; large: string } = {
-    small: "px-3 py-2 text-sm gap-1",
-    medium: "px-4 py-3 text-base gap-[6px]",
-    large: "px-5 py-4 text-lg gap-2",
-  };
 </script>
 
-<button {onclick} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`} {...props}>
+<button {onclick} class={`flex rounded w-fit ${colour} ${size} ${className}`} {...props}>
   {#if icon_left}
     <img src={icon_left} alt="" class={`w-6 h-6`} />
   {/if}
@@ -51,3 +33,19 @@
     <img src={icon_right} alt="" class={`w-6 h-6`} />
   {/if}
 </button>
+
+
+<style lang="postcss">
+    .small{
+      @apply px-3 py-2 text-sm gap-1;
+    }
+    .medium{@apply  px-4 py-3 text-base gap-[6px];
+  }
+    .large{@apply px-5 py-4 text-lg gap-2; }
+
+    .left:{@apply -rotate-90;}
+    .right:{@apply rotate-90;}
+    .primary:{@apply bg-primary text-text-light;}
+    .secondary:{@apply bg-secondary text-text-dark;}
+    .white:{@apply bg-support-white text-text-dark;}
+</style>

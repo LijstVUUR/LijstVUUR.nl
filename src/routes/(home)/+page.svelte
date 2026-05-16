@@ -77,33 +77,31 @@
 
 <!-- PEOPLE -->
 <Block>
-  <div class="group rounded-lg overflow-hidden flex flex-col items-center lg:gap-8 lg:px-4 lg:py-16 bg-secondary hover:bg-red-1 transition-all duration-600 ease-in-out">
+  <div class="group rounded-md overflow-hidden flex flex-col items-center py-8 md:py-16 px-6 lg:px-12 md:px-8 gap-8 bg-red-1 lg:bg-secondary hover:bg-red-1 transition-all duration-600 ease-in-out">
     <div class="flex flex-col lg:gap-6 items-center">
-      <h2 class="group-hover:text-text-light">Our people</h2>
+      <h2 class="text-text-light lg:text-text-dark group-hover:text-text-light">Our people</h2>
       <Button>DROPDOWN</Button>
     </div>
-      <div bind:this={galleryPeople} class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div bind:this={galleryPeople} class="w-full lg:w-fit flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {#each u_council as member}
           <Person colour="light" variant="bordered" orientation="portrait" person={member} />
         {/each}
       </div>
-      <div class="flex w-fit items-center gap-4">
-        <ButtonLink href="/our-people">All our people</ButtonLink>
-        <div class="flex gap-2">
-          <Button size="medium" onclick={() => scroll("left", galleryPeople)}>
-            <Arrow class="-rotate-90 w-6 h-6" />
-          </Button>
-          <Button size="medium" onclick={() => scroll("right", galleryPeople)}>
-            <Arrow class="rotate-90 w-6 h-6" />
-          </Button>
+      <div class="flex w-full lg:w-fit items-center justify-between">
+        <Button class="lg:hidden" colour="white" size="small" onclick={() => scroll("left", galleryPeople)}>
+          <Arrow class="-rotate-90 h-5" />
+        </Button>
+        <ButtonLink size="small" colour="primary" class="h-full group-hover:bg-secondary group-hover:text-text-dark" href="/our-people">All our people</ButtonLink>
+        <Button class="lg:hidden" colour="white" size="small" onclick={() => scroll("right", galleryPeople)}>
+          <Arrow class="rotate-90 h-5" />
+        </Button>
         </div>
       </div>
-  </div>
 </Block>
 
 <!-- CONTACT FORM -->
 <Block>
-  <div class="relative flex flex-col gap-4 pt-16 pb-8 lg:my-16 lg:bg-red-1 lg:flex-row lg:px-8 lg:py-8 lg:text-text-light lg:rounded">
+  <div class="relative flex flex-col gap-4 pt-16 pb-8 lg:my-16 lg:bg-red-1 lg:flex-row lg:px-8 lg:py-8 lg:text-text-light lg:rounded-md">
     <div class="flex flex-col gap-4 flex-1">
       <h2>{m.contact_form_title()}</h2>
       <p class="max-w-[50ch]">{m.contact_form_description()}</p>
