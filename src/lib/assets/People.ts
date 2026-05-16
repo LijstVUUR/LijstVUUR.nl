@@ -25,7 +25,15 @@ export type CouncilList = {
   list_pushers: Candidate[]
 }
 
-export const lists: { [key: string]: CouncilList } = {
+export type Lists = {
+  u_council: CouncilList,
+  humanities: CouncilList,
+  science: CouncilList,
+  social_science: CouncilList,
+  lego: CouncilList
+}
+
+export const lists: Lists = {
   u_council: {
     candidates: [
       {
@@ -131,5 +139,258 @@ export const lists: { [key: string]: CouncilList } = {
     list_pushers: [
 
     ]
+  },
+  humanities: {
+    candidates: [
+      {
+        name: "Minne van der Mast",
+        degree: {
+          nl: "BA Liberal Arts & Sciences",
+          en: "BA Liberal Arts & Sciences"
+        },
+        img_src: optimisedImage("/humanities/Minne van der Mast.jpg"),
+        linkedin: "https://www.linkedin.com/in/minne-van-der-mast-41a4a1219/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Eliza Geensen",
+        degree: {
+          nl: "BA Communicatie- en Informatiewetenschappen",
+          en: "BA Communication and Information Sciences"
+        },
+        img_src: optimisedImage("/humanities/Eliza Geensen.jpg"),
+        linkedin: "https://www.linkedin.com/in/elisa-geensen/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Bas Broekhuizen",
+        degree: {
+          nl: "MA Modern and Contemporary History",
+          en: "MA Modern and Contemporary History"
+        },
+        img_src: optimisedImage("/humanities/Bas Broekhuizen.jpg"),
+        linkedin: "https://www.linkedin.com/in/bas-broekhuizen-1b0314265/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Chloe Lawrey",
+        degree: {
+          nl: "BA Literatuurwetenschap",
+          en: "BA Literary Studies"
+        },
+        img_src: optimisedImage("/humanities/Chloe Lawrey.jpg"),
+        linkedin: null,
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Kiki Spaan",
+        degree: {
+          nl: "BA Kunstgeschiedenis",
+          en: "BA Art History"
+        },
+        img_src: optimisedImage("/humanities/Kiki Spaan.jpg"),
+        linkedin: "https://www.linkedin.com/in/kiki-ling-spaan-47207b253/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Thirza Bier",
+        degree: {
+          nl: "BA Literatuurwetenschap",
+          en: "BA Literary Studies"
+        },
+        img_src: optimisedImage("/humanities/Thirza Bier.jpeg"),
+        linkedin: null,
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Sander Schukkink",
+        degree: {
+          nl: "BA Geschiedenis",
+          en: "BA History"
+        },
+        img_src: optimisedImage("/humanities/Sander Schukkink.jpg"),
+        linkedin: null,
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Menno Govaers",
+        degree: {
+          nl: "MA Applied Ethics",
+          en: "MA Applied Ethics"
+        },
+        img_src: optimisedImage("/humanities/Menno Govaers.jpg"),
+        linkedin: "https://www.linkedin.com/in/mennogovaers/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Eline Post",
+        degree: {
+          nl: "MA Gender Studies",
+          en: "MA Gender Studies"
+        },
+        img_src: optimisedImage("/humanities/Eline Post.jpg"),
+        linkedin: "https://www.linkedin.com/in/eline-post-83823b240/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Lucia Komen",
+        degree: {
+          nl: "MA Neerlandistiek",
+          en: "MA Dutch Studies"
+        },
+        img_src: optimisedImage("/humanities/Lucia Komen.jpg"),
+        linkedin: "https://www.linkedin.com/in/lucia-komen-95ba8233a/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Sophie Jansen",
+        degree: {
+          nl: "BA Engelse Taal en Cultuur",
+          en: "BA English Language and Culture"
+        },
+        img_src: optimisedImage("/humanities/Sophie Jansen.jpeg"),
+        linkedin: "https://www.linkedin.com/in/sophie-jansen-223b97198/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Adam Krid",
+        degree: {
+          nl: "BA Geschiedenis",
+          en: "BA History"
+        },
+        img_src: optimisedImage("/humanities/Adam Krid.jpg"),
+        linkedin: "https://www.linkedin.com/in/adam-krid-a39b87207/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Daniel van Burgsteden",
+        degree: {
+          nl: "BSc Politics, Philosophy and Economics",
+          en: "BSc Politics, Philosophy and Economics"
+        },
+        img_src: optimisedImage("/humanities/Daniel van Burgsteden.jpg"),
+        linkedin: "https://www.linkedin.com/in/daniel-van-burgsteden-93a4b3313/",
+        instagram: null,
+        utrecht: null
+      }
+    ],
+    list_pushers: []
+  },
+  science: {
+    candidates: [
+      {
+        name: "Sara van Oevelen",
+        degree: {
+          nl: "MSc History and Philosophy of Science",
+          en: "MSc History and Philosophy of Science"
+        },
+        img_src: optimisedImage("/beta/Sara van Oevelen.jpg"),
+        linkedin: "https://www.linkedin.com/in/sara-van-oevelen-b88750356/",
+        instagram: null,
+        utrecht: null
+      },
+      {
+        name: "Dio Peters",
+        degree: {
+          nl: "BSc Molecular and Biophysical Life Sciences",
+          en: "BSc Molecular and Biophysical Life Sciences"
+        },
+        img_src: optimisedImage("/beta/Dio Peters.jpg"),
+        linkedin: null,
+        instagram: null,
+        utrecht: null
+      }
+    ],
+    list_pushers: []
+  },
+  social_science: {
+    candidates: [
+      {
+        name: "Fernande de Graaf",
+        degree: {
+          nl: "BSc Interdisciplinaire sociale wetenschap",
+          en: "BSc Interdisciplinary Social Science"
+        },
+        img_src: optimisedImage("/social_science/Fernande de Graaf.jpg"),
+        linkedin: "https://www.linkedin.com/in/fernande-de-graaf-1574153a0/",
+        instagram: null,
+        utrecht: null
+      },
+      {
+        name: "Daan van Veen",
+        degree: {
+          nl: "BSc Interdisciplinaire sociale wetenschap",
+          en: "BSc Interdisciplinary Social Science"
+        },
+        img_src: optimisedImage("/social_science/Daan van Veen.jpg"),
+        linkedin: "https://www.linkedin.com/in/daan-van-veen-4b29732b8/",
+        instagram: null,
+        utrecht: null
+      },
+      {
+        name: "Soleiman Soleimankheel",
+        degree: {
+          nl: "BSc Interdisciplinaire sociale wetenschap",
+          en: "BSc Interdisciplinary Social Science"
+        },
+        img_src: optimisedImage("/social_science/Soleiman Soleimankheel.JPG"),
+        linkedin: "https://www.linkedin.com/in/soleiman-soleimankheel-31263920b/",
+        instagram: null,
+        utrecht: null
+      },
+
+      {
+        name: "Mark Bergmeijer",
+        degree: {
+          nl: "BSc Interdisciplinaire sociale wetenschap",
+          en: "BSc Interdisciplinary Social Science"
+        },
+        img_src: optimisedImage("/social_science/Mark Bergmeijer.jpg"),
+        linkedin: "https://www.linkedin.com/in/mark-bergmeijer-1ba1392b7/",
+        instagram: null,
+        utrecht: null
+      }
+    ],
+    list_pushers: []
+  },
+  lego: {
+    candidates: [
+      {
+        name: "Kurt Verweel",
+        degree: {
+          nl: "BSc Bestuurs- en organisatiewetenschap",
+          en: "BSc Governance"
+        },
+        img_src: optimisedImage("/lego/Kurt Verweel.jpg"),
+        linkedin: "https://www.linkedin.com/in/kurt-verweel-228237228/",
+        instagram: null,
+        utrecht: null
+      }
+    ],
+    list_pushers: []
   }
 }

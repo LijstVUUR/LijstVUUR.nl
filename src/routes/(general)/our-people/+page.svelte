@@ -1,19 +1,14 @@
 <script lang="ts">
   import Person from "$lib/components/Person.svelte";
-  // import * as People from "$lib/assets/OurPeople.json";
   import Block from "$lib/components/Block.svelte";
   import Button from "$lib/components/Button.svelte";
   import { lists } from "$lib/assets/People";
 
   const u_council = lists.u_council;
-  // const beta = People.beta_faculty as any as Person[];
-  // const gw = People.gw_faculty as any as Person[];
-  // const rebo = People.rebo_faculty as any as Person[];
-  // const fsw = People.fsw_faculty as any as Person[];
-  const beta = [] as Person[];
-  const gw = [] as Person[];
-  const rebo = [] as Person[];
-  const fsw = [] as Person[];
+  const beta = lists.science;
+  const gw = lists.humanities;
+  const rebo = lists.lego;
+  const fsw = lists.social_science;
 
   const full_list = [
     { title: "Universiteitsraad", description: "Description yet to come", people: u_council, scroll: "u_council" },
