@@ -17,7 +17,7 @@
     <div class="ripple"></div>
   {/if}
   <div id="img" class=" relative z-10">
-    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} class="h-full w-full object-cover object-top aspect-[4/5]"></enhanced:img>
+    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top"></enhanced:img>
   </div>
   <div id="text" class="w-full flex flex-col shrink-0 relative z-10">
     <div class="flex flex-col gap-1">

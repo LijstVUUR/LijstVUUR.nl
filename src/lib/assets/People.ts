@@ -34,10 +34,32 @@ export const lists: { [key: string]: CouncilList } = {
           "nl": "BA Sociologie",
           "en": "BA Sociology"
         },
-        "img_src": optimisedImage("/u_council/Puk.jpg"),
-        "linkedin": "https://www.linkedin.com/in/puk-donken-008611211/",
-        "instagram": null,
-        "utrecht": ""
+        img_src: optimisedImage("/u_council/Puk.jpg"),
+        linkedin: "https://www.linkedin.com/in/puk-donken-008611211/",
+        instagram: null,
+        utrecht: ""
+      },
+      {
+        name: "Paolo Dioni",
+        degree: {
+          nl: "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
+          en: "MSc Theoretical Physics & MSc History and Philosophy "
+        },
+        img_src: optimisedImage("/u_council/Paolo.png"),
+        linkedin: "https://www.linkedin.com/in/paolodioni/",
+        instagram: null,
+        utrecht: ""
+      },
+      {
+        name: "Du Nguyen",
+        degree: {
+          nl: "BA Geschiedenis & BSc Biologie",
+          en: "BA History & BSc Biology"
+        },
+        img_src: optimisedImage("/u_council/Du.jpg"),
+        linkedin: "https://www.linkedin.com/in/du-nguyen-1b1a50268/",
+        instagram: null,
+        utrecht: ""
       }
     ],
     list_pushers: [
