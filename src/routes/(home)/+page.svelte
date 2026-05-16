@@ -13,14 +13,33 @@
   import type { Candidate } from "$lib/assets/People.js";
   import { localizeHref } from "$src/lib/paraglide/runtime";
 
-  const u_council = People.u_council as any as Candidate[];
-  const beta = People.beta_faculty as any as Candidate[];
-  const gw = People.gw_faculty as any as Candidate[];
-  const rebo = People.rebo_faculty as any as Candidate[];
-  const fsw = People.fsw_faculty as any as Candidate[];
+  import { lists } from "$lib/assets/People";
+
+  // const u_council = lists.u_council.candidates;
+  // const beta = lists.beta_faculty.candidates;
+  // const gw = lists.gw_faculty.candidates;
+  // const rebo = lists.rebo_faculty.candidates;
+  // const fsw = lists.fsw_faculty.candidates;
+
+  const full_list = {
+    u_council: lists.u_council.candidates,
+    beta: [], // lists.beta_faculty.candidates,
+    gw: [], //lists.gw_faculty.candidates,
+    rebo: [], // lists.rebo_faculty.candidates,
+    fsw: [], //lists.fsw_faculty.candidates,
+  };
 
   let gallery: HTMLElement;
   let galleryPeople: HTMLElement;
+  let dropdown = $state<"u_council" | "beta" | "gw" | "fsw" | "rebo">(
+    "u_council",
+  );
+
+  function sliceList(list: Candidate[]) {
+    return list.slice(0, Math.min(list.length, 3));
+  }
+
+  function pickList(key: string) {}
 
   function scroll(direction: "left" | "right", parentGallery: HTMLElement) {
     const cardWidth = parentGallery.firstElementChild?.clientWidth ?? 0;
@@ -100,19 +119,29 @@
 <!-- PEOPLE -->
 <Block>
   <div
-    class="people group relative rounded-md overflow-hidden flex flex-col items-center py-8 md:py-16 px-6 lg:px-12 md:px-8 gap-8 bg-red-1 lg:bg-secondary"
+    class="people group relative rounded-md overflow-hidden flex flex-col items-center py-8 md:py-16 px-6 lg:px-12 md:px-8 gap-8 bg-primary lg:bg-secondary"
   >
     <div class="ripple"></div>
 
     <div class="flex flex-col lg:gap-6 items-center relative z-10">
       <h2 class="header text-text-light lg:text-text-dark">Our people</h2>
-      <Button>DROPDOWN</Button>
+      <div
+        class="rounded px-4 py-3 text-base gap-[6px] bg-secondary text-text-dark md:bg-primary md:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
+      >
+        <select bind:value={dropdown}>
+          <option value="u_council">Universiteitsraad</option>
+          <option value="beta">Beta</option>
+          <option value="gw">GW</option>
+          <option value="rebo">Rebo</option>
+          <option value="fsw">FSW</option>
+        </select>
+      </div>
     </div>
     <div
       bind:this={galleryPeople}
       class="w-full lg:w-fit flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative z-10"
     >
-      {#each u_council as member}
+      {#each sliceList(full_list[dropdown]) as member}
         <Person
           colour="light"
           variant="bordered"

@@ -1,4 +1,4 @@
- <script lang="ts">
+<script lang="ts">
   import Footer from "$lib/components/Footer.svelte";
   import HeaderLarge from "$lib/components/HeaderLarge.svelte";
 
@@ -6,7 +6,7 @@
 </script>
 
 <HeaderLarge />
-  <div class="overflow-hidden flex-1">
-    {@render children()}
-  </div>
+<div class="overflow-hidden flex-1 flex flex-col gap-8">
+  {@render children()}
+</div>
 <Footer />
