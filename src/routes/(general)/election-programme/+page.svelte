@@ -3,7 +3,7 @@
   import Block from "$lib/components/Block.svelte";
   import Button from "$lib/components/Button.svelte";
 
-  import * as m from "$src/paraglide/messages.js";
+  import * as m from "$lib/paraglide/messages.js";
 
   const elements = [
     {

@@ -4,7 +4,7 @@
   import LanguageToggle from "./LanguageToggle.svelte";
   import Button from "./Button.svelte";
 
-  import * as m from "$src/paraglide/messages.js";
+  import * as m from "$lib/paraglide/messages.js";
   import ButtonLink from "./ButtonLink.svelte";
 
   let isOpen = false;

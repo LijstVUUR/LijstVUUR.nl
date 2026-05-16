@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as m from "$src/paraglide/messages.js";
+  import * as m from "$lib/paraglide/messages.js";
   import Arrow from "$lib/assets/icons/Arrow.svelte";
   import Logo from "$lib/assets/logo/logo_color_no_text.svg";
 
@@ -21,18 +21,11 @@
   let gallery: HTMLElement;
   let galleryPeople: HTMLElement;
 
-  function scroll(direction: "left" | "right") {
-    const cardWidth = gallery.firstElementChild?.clientWidth ?? 0;
+  function scroll(direction: "left" | "right", parentGallery: HTMLElement) {
+    const cardWidth = parentGallery.firstElementChild?.clientWidth ?? 0;
     const cardPadding = 32;
     const totalWidth = cardWidth + cardPadding;
-    gallery.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
-  }
-
-  function scrollPeople(direction: "left" | "right") {
-    const cardWidth = galleryPeople.firstElementChild?.clientWidth ?? 0;
-    const cardPadding = 16;
-    const totalWidth = cardWidth + cardPadding;
-    galleryPeople.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
+    parentGallery.scrollBy({ left: direction === "left" ? -totalWidth : totalWidth, behavior: "smooth" });
   }
 
   let email = $state("");
@@ -71,10 +64,10 @@
         <Standpunt title={m.vision_protect_protesting()} img_src="/images_unopt/protect_protesting.png" />
       </div>
       <div class="flex w-full justify-between">
-        <Button size="medium" onclick={() => scroll("left")}>
+        <Button size="medium" onclick={() => scroll("left", gallery)}>
           <Arrow class="-rotate-90 w-6 h-6" />
         </Button>
-        <Button size="medium" onclick={() => scroll("right")}>
+        <Button size="medium" onclick={() => scroll("right", gallery)}>
           <Arrow class="rotate-90 w-6 h-6" />
         </Button>
       </div>
@@ -89,7 +82,6 @@
       <h2 class="group-hover:text-text-light">Our people</h2>
       <Button>DROPDOWN</Button>
     </div>
-    <div class="flex flex-col gap-4 flex-1 min-w-0">
       <div bind:this={galleryPeople} class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {#each u_council as member}
           <Person colour="light" variant="bordered" orientation="portrait" person={member} />
@@ -98,15 +90,14 @@
       <div class="flex w-fit items-center gap-4">
         <ButtonLink href="/our-people">All our people</ButtonLink>
         <div class="flex gap-2">
-          <Button size="medium" onclick={() => scrollPeople("left")}>
+          <Button size="medium" onclick={() => scroll("left", galleryPeople)}>
             <Arrow class="-rotate-90 w-6 h-6" />
           </Button>
-          <Button size="medium" onclick={() => scrollPeople("right")}>
+          <Button size="medium" onclick={() => scroll("right", galleryPeople)}>
             <Arrow class="rotate-90 w-6 h-6" />
           </Button>
         </div>
       </div>
-    </div>
   </div>
 </Block>
 

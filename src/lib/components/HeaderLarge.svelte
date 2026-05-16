@@ -2,7 +2,7 @@
   import logo from "$lib/assets/logo/VUUR.svg";
   import Navigation from "./Navigation.svelte";
 
-  import * as m from "$src/paraglide/messages.js";
+  import * as m from "$lib/paraglide/messages.js";
 </script>
 
 <header class="relative w-full h-60 bg-[radial-gradient(70%_130%_at_30%_50%,#F0B67F_0%,transparent_60%),linear-gradient(135deg,#C00A35_20%,#981829_50.52%)] md:h-80 md:bg-[radial-gradient(70%_130%_at_23%_50%,#F0B67F_0%,transparent_60%),linear-gradient(135deg,#C00A35_20%,#981829_50.52%)] text-text-light">

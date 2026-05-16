@@ -1,7 +1,7 @@
 <script lang="ts">
   import English from "$lib/assets/icons/language/flagUK.svg";
   import Dutch from "$lib/assets/icons/language/flagNL.svg";
-  import { getLocale, setLocale, locales } from "$src/paraglide/runtime";
+  import { getLocale, setLocale, locales } from "$lib/paraglide/runtime";
   import { page } from "$app/state";
   import { goto } from "$app/navigation";
 </script>
