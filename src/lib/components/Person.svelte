@@ -5,7 +5,7 @@
   import type { Candidate } from "$lib/assets/People";
   import { getLocale } from "../paraglide/runtime";
 
-  let { colour = "light", orientation = "portrait", variant = "bordered", person }: { colour?: "beige" | "light"; orientation?: "landscape" | "portrait"; variant?: "bordered" | "borderless"; person: Candidate } = $props();
+  let { colour = "light", orientation = "portrait", variant = "bordered", person, position }: { colour?: "beige" | "light"; orientation?: "landscape" | "portrait"; variant?: "bordered" | "borderless"; person: Candidate; position: number } = $props();
   let degree_localised = person.degree[getLocale()];
   const colourClasses: { beige: string; light: string } = {
     beige: "bg-bg-beige",
@@ -20,11 +20,16 @@
   <div id="img" class="relative z-10">
     <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top" width="220" height="220"></enhanced:img>
   </div>
-  <div id="text" class="flex flex-col relative z-10">
-    <div class="flex flex-col gap-1">
-      <h3>{person.name}</h3>
-      <p>{degree_localised}</p>
+
+  <div id="text" class="flex flex-col relative z-10 w-full">
+    <div class="flex justify-between w-full">
+      <div class="flex flex-col gap-1">
+        <h3>{person.name}</h3>
+        <p>{degree_localised}</p>
+      </div>
+      <p class="text-bg-beige text-2xl font-extrabold font-sans">{position}</p>
     </div>
+
     <div class="w-full flex justify-between items-center">
       <div class="flex gap-2 items-center">
         {#if person.linkedin}

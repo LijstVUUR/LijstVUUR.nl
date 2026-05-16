@@ -40,8 +40,8 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        {#each list.people.candidates as member}
-          <Person colour="beige" variant="bordered" orientation="landscape" person={member} />
+        {#each list.people.candidates as member, index}
+          <Person colour="beige" variant="bordered" orientation="landscape" person={member} position={index + 1} />
         {/each}
       </div>
     </div>
