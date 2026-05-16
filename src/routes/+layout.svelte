@@ -1,17 +1,9 @@
 <script lang="ts">
   import LanguageToggle from "$src/lib/components/LanguageToggle.svelte";
   import "../app.css";
-
+	
   let { children } = $props();
 </script>
-
-<!-- <nav class="locale-switcher" aria-label="Languages">
-  {#each locales as locale}
-    <a href={resolve(localizeHref(page.url.pathname, { locale }))} data-sveltekit-reload>
-      {locale}
-    </a>
-  {/each}
-</nav> -->
 
 {@render children()}
 

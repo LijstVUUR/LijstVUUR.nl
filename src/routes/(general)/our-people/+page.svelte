@@ -2,7 +2,7 @@
   import Person from "$lib/components/Person.svelte";
   // import * as People from "$lib/assets/OurPeople.json";
   import Block from "$lib/components/Block.svelte";
-  import ButtonLink from "$lib/components/ButtonLink.svelte";
+  import Button from "$lib/components/Button.svelte";
   import { lists } from "$lib/assets/People";
 
   const u_council = lists.u_council;
@@ -17,10 +17,10 @@
 
   const full_list = [
     { title: "Universiteitsraad", description: "Description yet to come", people: u_council, scroll: "u_council" },
-    // { title: "Faculteit BETA", description: "Description yet to come", people: beta, scroll: "beta" },
-    // { title: "Faculteit GW", description: "Description yet to come", people: gw, scroll: "gw" },
-    // { title: "Faculteit REBO", description: "Description yet to come", people: rebo, scroll: "rebo" },
-    // { title: "Faculteit FSW", description: "Description yet to come", people: fsw, scroll: "fsw" },
+    { title: "Faculteit BETA", description: "Description yet to come", people: beta, scroll: "beta" },
+    { title: "Faculteit GW", description: "Description yet to come", people: gw, scroll: "gw" },
+    { title: "Faculteit REBO", description: "Description yet to come", people: rebo, scroll: "rebo" },
+    { title: "Faculteit FSW", description: "Description yet to come", people: fsw, scroll: "fsw" },
   ];
 
   function scrollTo(id: string) {
@@ -30,11 +30,11 @@
 
 <Block>
   <div class="flex flex-wrap gap-2 pt-16">
-    <ButtonLink onclick={() => scrollTo("u_council")} colour="secondary"><p>Universiteitsraad</p></ButtonLink>
-    <ButtonLink onclick={() => scrollTo("beta")} colour="secondary"><p>Faculteit BETA</p></ButtonLink>
-    <ButtonLink onclick={() => scrollTo("gw")} colour="secondary"><p>Faculteit GW</p></ButtonLink>
-    <ButtonLink onclick={() => scrollTo("rebo")} colour="secondary"><p>Faculteit REBO</p></ButtonLink>
-    <ButtonLink onclick={() => scrollTo("fsw")} colour="secondary"><p>Faculteit FSW</p></ButtonLink>
+    <Button onclick={() => scrollTo("u_council")} colour="secondary"><p>Universiteitsraad</p></Button>
+    <Button onclick={() => scrollTo("beta")} colour="secondary"><p>Faculteit BETA</p></Button>
+    <Button onclick={() => scrollTo("gw")} colour="secondary"><p>Faculteit GW</p></Button>
+    <Button onclick={() => scrollTo("rebo")} colour="secondary"><p>Faculteit REBO</p></Button>
+    <Button onclick={() => scrollTo("fsw")} colour="secondary"><p>Faculteit FSW</p></Button>
   </div>
 
   {#each full_list as list}

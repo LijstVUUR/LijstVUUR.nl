@@ -1,19 +1,22 @@
 <script lang="ts">
   import English from "$lib/assets/icons/language/flagUK.svg";
   import Dutch from "$lib/assets/icons/language/flagNL.svg";
-  import { getLocale, setLocale, locales } from "$lib/paraglide/runtime";
-  import { page } from "$app/state";
-  import { goto } from "$app/navigation";
+
+  import { page } from '$app/state';
+	import { resolve } from '$app/paths';
+	import { getLocale, deLocalizeUrl, localizeHref } from '$lib/paraglide/runtime';
+
+	const a = page.url.pathname as string
 </script>
 
 <div>
   {#if getLocale() == "en"}
-    <button onclick={() => setLocale("nl")}>
-      <img src={Dutch} alt="" />
-    </button>
+	<a href={localizeHref(deLocalizeUrl(page.url).pathname as `/${string}`, { locale: "nl" })} data-sveltekit-reload>
+		<img src={Dutch} alt="" />
+	</a>
   {:else}
-    <button onclick={() => setLocale("en")}>
+	<a href={localizeHref(deLocalizeUrl(page.url).pathname as `/${string}`, { locale: "en" })} data-sveltekit-reload>
       <img src={English} alt="" />
-    </button>
+	</a>
   {/if}
 </div>

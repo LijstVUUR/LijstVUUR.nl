@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLAnchorAttributes } from "svelte/elements";
+  import { localizeHref } from "../paraglide/runtime";
 
   interface Props extends HTMLAnchorAttributes{
     children?: Snippet;
@@ -8,7 +9,7 @@
     icon_right?: string;
     size?: "small" | "medium" | "large";
     colour?: "primary" | "secondary" | "white";
-    href?: string;
+    href: string;
   }
 
   let {
@@ -17,7 +18,7 @@
     icon_right = "",
     size = "small",
     colour = "primary",
-    href,
+    href = "",
     class:className,
     ...props
   }:Props = $props();
@@ -41,7 +42,7 @@
   };
 </script>
 
-<a {href} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`} {...props}>
+<a href={localizeHref(href)} class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`} {...props}>
   {#if icon_left}
     <img src={icon_left} alt="" class={`w-6 h-6`} />
   {/if}

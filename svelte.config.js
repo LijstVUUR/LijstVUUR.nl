@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from "@sveltejs/adapter-static";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,16 +9,16 @@ const config = {
 
   kit: {
     adapter: adapter({
-      fallback: null,  // no SPA fallback, true static
-      trailingSlash: "never"
+      fallback: null, // no SPA fallback, true static
+      trailingSlash: "never",
     }),
     prerender: {
-      entries: ['*']  // prerender all routes
+      entries: ["*"], // prerender all routes
     },
     alias: {
-      $src: 'src'
-    }
-  }
+      $src: "src",
+    },
+  },
 };
 
 export default config;
