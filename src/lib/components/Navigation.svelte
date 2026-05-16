@@ -13,7 +13,7 @@
 </script>
 
 <div class="w-full flex flex-row items-center justify-between">
-  <a class="h-full flex flex-row items-center gap-4" href="/">
+  <a class="h-full flex flex-row items-center gap-4" href={localizeHref("/")}>
     <p class="leading-[0.8] text-[2.5rem] font-sans capitalize">Lijst Vuur</p>
   </a>
   <nav class="flex flex-row">
