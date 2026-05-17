@@ -1,6 +1,11 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@std/fs@*": "1.0.23",
+    "jsr:@std/fs@^1.0.23": "1.0.23",
+    "jsr:@std/internal@^1.0.12": "1.0.13",
+    "jsr:@std/path@*": "1.1.4",
+    "jsr:@std/path@^1.1.4": "1.1.4",
     "npm:@inlang/paraglide-js@^2.18.0": "2.18.0_typescript@5.9.3",
     "npm:@sveltejs/adapter-auto@3": "3.3.1_@sveltejs+kit@2.59.1__@sveltejs+vite-plugin-svelte@6.2.4___svelte@5.55.5___vite@6.4.2__svelte@5.55.5__typescript@5.9.3__vite@6.4.2_vite@6.4.2",
     "npm:@sveltejs/adapter-static@^3.0.10": "3.0.10_@sveltejs+kit@2.59.1__@sveltejs+vite-plugin-svelte@6.2.4___svelte@5.55.5___vite@6.4.2__svelte@5.55.5__typescript@5.9.3__vite@6.4.2_vite@6.4.2",
@@ -8,6 +13,7 @@
     "npm:@sveltejs/kit@2": "2.59.1_@sveltejs+vite-plugin-svelte@6.2.4__svelte@5.55.5__vite@6.4.2_svelte@5.55.5_typescript@5.9.3_vite@6.4.2",
     "npm:@sveltejs/vite-plugin-svelte@6": "6.2.4_svelte@5.55.5_vite@6.4.2",
     "npm:autoprefixer@^10.4.20": "10.5.0_postcss@8.5.14",
+    "npm:basic-ftp@^6.0.1": "6.0.1",
     "npm:pdfjs-dist@^5.7.284": "5.7.284",
     "npm:svelte-check@4": "4.4.8_svelte@5.55.5_typescript@5.9.3",
     "npm:svelte@5": "5.55.5",
@@ -15,6 +21,24 @@
     "npm:tailwindcss@^3.4.9": "3.4.19",
     "npm:typescript@5": "5.9.3",
     "npm:vite@6": "6.4.2"
+  },
+  "jsr": {
+    "@std/fs@1.0.23": {
+      "integrity": "3ecbae4ce4fee03b180fa710caff36bb5adb66631c46a6460aaad49515565a37",
+      "dependencies": [
+        "jsr:@std/internal",
+        "jsr:@std/path@^1.1.4"
+      ]
+    },
+    "@std/internal@1.0.13": {
+      "integrity": "2f9546691d4ac2d32859c82dff284aaeac980ddeca38430d07941e7e288725c0"
+    },
+    "@std/path@1.1.4": {
+      "integrity": "1d2d43f39efb1b42f0b1882a25486647cb851481862dc7313390b2bb044314b5",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    }
   },
   "npm": {
     "@alloc/quick-lru@5.2.0": {
@@ -749,6 +773,9 @@
       "integrity": "sha512-Ic44hnOtFIgravCunj1ifSoQPSUrkNiJuH9Mf6jr2jjoA74icqV8wU0KuadXeOR8zuIJMOoTv0GuQjZ9ZYNMeA==",
       "bin": true
     },
+    "basic-ftp@6.0.1": {
+      "integrity": "sha512-3ilxa3n4276wGQp/ImRAuz4ALdsj/2Wd3FqoZBZlajDYnByCZ0JMb4+26Rde0wGXIbM0G2HWSfr/Fi8b21KX8g=="
+    },
     "binary-extensions@2.3.0": {
       "integrity": "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw=="
     },
@@ -1481,6 +1508,10 @@
     }
   },
   "workspace": {
+    "dependencies": [
+      "jsr:@std/fs@^1.0.23",
+      "jsr:@std/path@^1.1.4"
+    ],
     "packageJson": {
       "dependencies": [
         "npm:@inlang/paraglide-js@^2.18.0",
@@ -1490,6 +1521,7 @@
         "npm:@sveltejs/kit@2",
         "npm:@sveltejs/vite-plugin-svelte@6",
         "npm:autoprefixer@^10.4.20",
+        "npm:basic-ftp@^6.0.1",
         "npm:pdfjs-dist@^5.7.284",
         "npm:svelte-check@4",
         "npm:svelte@5",

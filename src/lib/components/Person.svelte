@@ -25,22 +25,12 @@
   };
 </script>
 
-<div
-  id="wrapper"
-  class={`relative rounded-md shrink-0 overflow-hidden flex ${orientation} ${variant} ${colourClasses[colour]}`}
->
+<div id="wrapper" class={`relative rounded-md shrink-0 overflow-hidden flex ${orientation} ${variant} ${colourClasses[colour]}`}>
   {#if orientation === "landscape"}
     <div class="ripple"></div>
   {/if}
   <div id="img" class="relative z-10">
-    <enhanced:img
-      src={person.img_src}
-      alt={`Picture of ${person.name}`}
-      loading="lazy"
-      class="h-full w-full object-cover object-top"
-      width="220"
-      height="220"
-    ></enhanced:img>
+    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top" width="220" height="220"></enhanced:img>
   </div>
 
   <div id="text" class="flex flex-col relative z-10 w-full">
