@@ -18,7 +18,10 @@
     person: Candidate;
     position?: number;
   } = $props();
+
   let degree_localised = $derived(person.degree[getLocale()]);
+  let imageLoaded = $state(false);
+
   const colourClasses: { beige: string; light: string } = {
     beige: "bg-bg-beige",
     light: "bg-bg-light",
@@ -30,9 +33,11 @@
     <div class="ripple"></div>
   {/if}
   <div id="img" class="relative z-10">
-    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top" width="220" height="220"></enhanced:img>
+    {#if !imageLoaded}
+      <div class="skeleton h-full w-full object-cover object-top"></div>
+    {/if}
+    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top transition-opacity duration-300" style={imageLoaded ? "opacity: 1" : "opacity: 0"} width="220" height="220" onload={() => (imageLoaded = true)}></enhanced:img>
   </div>
-
   <div id="text" class="flex flex-col relative z-10 w-full">
     <div class="flex justify-between w-full">
       <div class="flex flex-col gap-1">
@@ -41,7 +46,6 @@
       </div>
       <p class="position text-2xl font-extrabold font-sans">{position}</p>
     </div>
-
     <div class="w-full flex justify-between items-center">
       <div class="flex gap-2 items-center">
         {#if person.linkedin}
@@ -77,28 +81,22 @@
   .bordered.landscape #img {
     @apply py-2 pl-2 pr-0 w-1/3 shrink-0;
   }
-
   .borderless.portrait,
   .borderless.landscape {
     @apply py-0 px-0;
   }
-
   .portrait {
     @apply flex-col w-[256px] h-[400px];
   }
-
   .landscape {
     @apply flex-row h-[220px];
   }
-
   .portrait #text {
     @apply py-4 px-4 gap-2;
   }
-
   .landscape #text {
     @apply py-4 pl-4 pr-8 justify-between;
   }
-
   .ripple {
     @apply absolute top-1/2 left-1/2 w-0 h-0 bg-primary z-0;
     border-radius: 50%;
@@ -107,24 +105,35 @@
       width 0.5s ease,
       height 0.5s ease;
   }
-
   .landscape .position {
     @apply text-bg-beige;
   }
-
   .portrait .position {
     @apply text-primary;
   }
-
   #wrapper.landscape {
     transition: color 0.5s ease;
-
     &:hover {
       @apply text-text-light;
-
       .ripple {
         @apply w-[800px] h-[800px];
       }
+    }
+  }
+
+  .skeleton {
+    border-radius: inherit;
+    background: linear-gradient(90deg, theme(colors.support-grey / 60%) 25%, theme(colors.support-grey / 90%) 50%, theme(colors.support-grey / 60%) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
     }
   }
 </style>
