@@ -14,13 +14,6 @@
   import { localizeHref } from "$src/lib/paraglide/runtime";
 
   import { lists } from "$lib/assets/People";
-  import DropdownChip from "$src/lib/assets/icons/DropdownChip.svelte";
-
-  // const u_council = lists.u_council.candidates;
-  // const beta = lists.beta_faculty.candidates;
-  // const gw = lists.gw_faculty.candidates;
-  // const rebo = lists.rebo_faculty.candidates;
-  // const fsw = lists.fsw_faculty.candidates;
 
   const full_list = {
     u_council: lists.u_council.candidates,
@@ -153,13 +146,13 @@
       </div>
       <div class="self-end">
         <div class="hidden lg:block">
-          <Button size="medium" colour="secondary" onclick={submit}>
+          <Button size="medium" colour="secondary" onclick={submit} animate={true}>
             <p class="font-medium">{m.contact_form_submit()}</p>
           </Button>
         </div>
 
         <div class="lg:hidden">
-          <Button size="medium" onclick={submit}>
+          <Button size="medium" onclick={submit} animate={true}>
             <p class="font-medium">{m.contact_form_submit()}</p>
           </Button>
         </div>
