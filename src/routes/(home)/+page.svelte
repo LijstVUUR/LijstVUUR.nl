@@ -14,6 +14,7 @@
   import { localizeHref } from "$src/lib/paraglide/runtime";
 
   import { lists } from "$lib/assets/People";
+  import DropdownChip from "$src/lib/assets/icons/DropdownChip.svelte";
 
   // const u_council = lists.u_council.candidates;
   // const beta = lists.beta_faculty.candidates;
@@ -23,10 +24,10 @@
 
   const full_list = {
     u_council: lists.u_council.candidates,
-    beta: [], // lists.beta_faculty.candidates,
-    gw: [], //lists.gw_faculty.candidates,
-    rebo: [], // lists.rebo_faculty.candidates,
-    fsw: [], //lists.fsw_faculty.candidates,
+    beta: lists.science.candidates,
+    gw: lists.humanities.candidates,
+    rebo: lists.lego.candidates,
+    fsw: lists.social_science.candidates,
   };
 
   let gallery: HTMLElement;
@@ -38,8 +39,6 @@
   function sliceList(list: Candidate[]) {
     return list.slice(0, Math.min(list.length, 3));
   }
-
-  function pickList(key: string) {}
 
   function scroll(direction: "left" | "right", parentGallery: HTMLElement) {
     const cardWidth = parentGallery.firstElementChild?.clientWidth ?? 0;
@@ -124,16 +123,21 @@
     <div class="ripple"></div>
 
     <div class="flex flex-col lg:gap-6 items-center relative z-10">
-      <h2 class="header text-text-light lg:text-text-dark">Our people</h2>
+      <h2 class="header text-text-light lg:text-text-dark">
+        {m.home_ourpeople_header()}
+      </h2>
       <div
-        class="rounded px-4 py-3 text-base gap-[6px] bg-secondary text-text-dark md:bg-primary md:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
+        class="relative inline-block rounded text-base gap-[6px] bg-secondary text-text-dark uppercase md:bg-primary md:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
       >
-        <select bind:value={dropdown}>
-          <option value="u_council">Universiteitsraad</option>
-          <option value="beta">Beta</option>
-          <option value="gw">GW</option>
-          <option value="rebo">Rebo</option>
-          <option value="fsw">FSW</option>
+        <select
+          class=" px-4 py-3 w-full h-full cursor-pointer appearance-auto bg-transparent transition duration-300 ease"
+          bind:value={dropdown}
+        >
+          <option value="u_council">{m.title_ucouncil()}</option>
+          <option value="beta">{m.title_beta()}</option>
+          <option value="gw">{m.title_gw()}</option>
+          <option value="rebo">{m.title_rebo()}</option>
+          <option value="fsw">{m.title_fsw()}</option>
         </select>
       </div>
     </div>
@@ -141,11 +145,12 @@
       bind:this={galleryPeople}
       class="w-full lg:w-fit flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative z-10"
     >
-      {#each sliceList(full_list[dropdown]) as member}
+      {#each sliceList(full_list[dropdown]) as member, index}
         <Person
           colour="light"
           variant="bordered"
           orientation="portrait"
+          position={index + 1}
           person={member}
         />
       {/each}
@@ -165,7 +170,8 @@
         class="h-full lg:bg-primary lg:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
         size="small"
         colour="secondary"
-        href={localizeHref("/our-people")}>All our people</ButtonLink
+        href={localizeHref("/our-people")}
+        >{m.home_ourpeople_button()}</ButtonLink
       >
       <Button
         class="lg:hidden"

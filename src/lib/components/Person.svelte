@@ -5,7 +5,19 @@
   import type { Candidate } from "$lib/assets/People";
   import { getLocale } from "../paraglide/runtime";
 
-  let { colour = "light", orientation = "portrait", variant = "bordered", person, position }: { colour?: "beige" | "light"; orientation?: "landscape" | "portrait"; variant?: "bordered" | "borderless"; person: Candidate; position: number } = $props();
+  let {
+    colour = "light",
+    orientation = "portrait",
+    variant = "bordered",
+    person,
+    position,
+  }: {
+    colour?: "beige" | "light";
+    orientation?: "landscape" | "portrait";
+    variant?: "bordered" | "borderless";
+    person: Candidate;
+    position?: number;
+  } = $props();
   let degree_localised = person.degree[getLocale()];
   const colourClasses: { beige: string; light: string } = {
     beige: "bg-bg-beige",
@@ -13,12 +25,22 @@
   };
 </script>
 
-<div id="wrapper" class={`relative rounded-md shrink-0 overflow-hidden flex ${orientation} ${variant} ${colourClasses[colour]}`}>
+<div
+  id="wrapper"
+  class={`relative rounded-md shrink-0 overflow-hidden flex ${orientation} ${variant} ${colourClasses[colour]}`}
+>
   {#if orientation === "landscape"}
     <div class="ripple"></div>
   {/if}
   <div id="img" class="relative z-10">
-    <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top" width="220" height="220"></enhanced:img>
+    <enhanced:img
+      src={person.img_src}
+      alt={`Picture of ${person.name}`}
+      loading="lazy"
+      class="h-full w-full object-cover object-top"
+      width="220"
+      height="220"
+    ></enhanced:img>
   </div>
 
   <div id="text" class="flex flex-col relative z-10 w-full">
@@ -27,7 +49,7 @@
         <h3>{person.name}</h3>
         <p>{degree_localised}</p>
       </div>
-      <p class="text-bg-beige text-2xl font-extrabold font-sans">{position}</p>
+      <p class="position text-2xl font-extrabold font-sans">{position}</p>
     </div>
 
     <div class="w-full flex justify-between items-center">
@@ -94,6 +116,14 @@
     transition:
       width 0.5s ease,
       height 0.5s ease;
+  }
+
+  .landscape .position {
+    @apply text-bg-beige;
+  }
+
+  .portrait .position {
+    @apply text-primary;
   }
 
   #wrapper.landscape {
