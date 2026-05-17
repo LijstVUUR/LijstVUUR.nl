@@ -18,7 +18,7 @@
     person: Candidate;
     position?: number;
   } = $props();
-  let degree_localised = person.degree[getLocale()];
+  let degree_localised = $derived(person.degree[getLocale()]);
   const colourClasses: { beige: string; light: string } = {
     beige: "bg-bg-beige",
     light: "bg-bg-light",
