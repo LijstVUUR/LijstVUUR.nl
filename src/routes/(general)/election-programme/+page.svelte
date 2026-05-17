@@ -52,7 +52,12 @@
         <h2 class="text-center leading-9">{m.kernwaarden_read_program()}</h2>
 
         <!-- BEETJE KUT MAAR LATER PAS FIXEN  -->
-        <embed src="/Election Programme 2026-2027.pdf" type="application/pdf" width="100%" height="600px" />
+        <embed
+          src="/Election Programme 2026-2027.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
+        />
 
         <Button>
           <p>Download het programma</p>
