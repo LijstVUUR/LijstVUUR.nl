@@ -130,7 +130,7 @@
         class="relative inline-block rounded text-base gap-[6px] bg-secondary text-text-dark uppercase md:bg-primary md:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
       >
         <select
-          class=" px-4 py-3 w-full h-full cursor-pointer appearance-auto bg-transparent transition duration-300 ease"
+          class="px-4 py-3 w-full h-full cursor-pointer appearance-auto bg-transparent transition duration-300 ease"
           bind:value={dropdown}
         >
           <option value="u_council">{m.title_ucouncil()}</option>
@@ -171,7 +171,7 @@
         size="small"
         colour="secondary"
         href={localizeHref("/our-people")}
-        >{m.home_ourpeople_button()}</ButtonLink
+        ><p class="font-medium">{m.home_ourpeople_button()}</p></ButtonLink
       >
       <Button
         class="lg:hidden"
