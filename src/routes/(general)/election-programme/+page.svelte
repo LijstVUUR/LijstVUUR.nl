@@ -60,7 +60,7 @@
         />
 
         <Button>
-          <p>Download het programma</p>
+          <p>{m.kernwaarden_download()}</p>
         </Button>
       </div>
     </div>
