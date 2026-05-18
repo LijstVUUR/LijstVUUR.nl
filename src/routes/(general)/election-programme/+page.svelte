@@ -64,7 +64,7 @@
         <!-- BEETJE KUT MAAR LATER PAS FIXEN  -->
         <embed src="/Election Programme 2026-2027.pdf" type="application/pdf" class="aspect-[21/30] self-center w-full xl:w-[70%]" />
 
-        <ButtonLink download={`/Election Programme 2026-2027.pdf`} href={`/Election Programme 2026-2027.pdf`} localize={false} target="_blank">
+        <ButtonLink href={`/Election Programme 2026-2027.pdf`} localize={false} target="_blank">
           <p>{m.kernwaarden_download()}</p>
         </ButtonLink>
       </div>

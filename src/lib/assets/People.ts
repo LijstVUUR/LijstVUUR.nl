@@ -61,8 +61,8 @@ export const lists: Lists = {
       {
         name: "Paolo Dioni",
         degree: {
-          nl: "MSc Theoretische Natuurkunde & MSc Geschiedenis en Filosofie",
-          en: "MSc Theoretical Physics & MSc History and Philosophy "
+          nl: "MSc Theoretical Physics & MSc History and Philosophy of Science",
+          en: "MSc Theoretical Physics & MSc History and Philosophy of Science"
         },
         img_src: optimisedImage("/u_council/Paolo.png"),
         linkedin: "https://www.linkedin.com/in/paolodioni/",

@@ -1485,6 +1485,10 @@
     }
   },
   "workspace": {
+    "dependencies": [
+      "jsr:@std/fs@^1.0.23",
+      "jsr:@std/path@^1.1.4"
+    ],
     "packageJson": {
       "dependencies": [
         "npm:@inlang/paraglide-js@^2.18.0",
