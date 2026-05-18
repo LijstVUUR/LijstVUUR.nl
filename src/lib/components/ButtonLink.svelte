@@ -44,7 +44,7 @@
 
 <a
   href={localizeHref(href)}
-  class={`${className} flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]}`}
+  class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`}
   {...props}
 >
   {#if icon_left}
