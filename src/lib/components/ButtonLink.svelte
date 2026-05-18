@@ -10,6 +10,7 @@
     size?: "small" | "medium" | "large";
     colour?: "primary" | "secondary" | "white";
     href: string;
+    localize?: boolean;
   }
 
   let {
@@ -19,6 +20,7 @@
     size = "small",
     colour = "primary",
     href = "",
+    localize = true,
     class: className,
     ...props
   }: Props = $props();
@@ -40,10 +42,12 @@
     medium: "px-4 py-3 text-base gap-[6px]",
     large: "px-5 py-4 text-lg gap-2",
   };
+
+  const url = localize ? localizeHref(href) : href;
 </script>
 
 <a
-  href={localizeHref(href)}
+  {href}
   class={`flex rounded w-fit ${colourClasses[colour]} ${sizeClasses[size]} ${className}`}
   {...props}
 >
