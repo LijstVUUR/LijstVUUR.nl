@@ -76,11 +76,6 @@
         class="flex gap-8 overflow-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
         <Standpunt
-          title={m.vision_digital_autonomy()}
-          img_src="/images_unopt/digital_autonomy.png"
-          href="/election-programme"
-        />
-        <Standpunt
           title={m.vision_abolish_4_0()}
           img_src="/images_unopt/4_rule.png"
           href="/election-programme"
@@ -88,6 +83,11 @@
         <Standpunt
           title={m.vision_inclusive_policy()}
           img_src="/images_unopt/inclusive_policy.png"
+          href="/election-programme"
+        />
+        <Standpunt
+          title={m.vision_digital_autonomy()}
+          img_src="/images_unopt/digital_autonomy.png"
           href="/election-programme"
         />
         <Standpunt
