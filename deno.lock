@@ -1507,8 +1507,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/fs@^1.0.23",
-      "jsr:@std/path@^1.1.4"
+      "jsr:@std/fs@^1.0.23"
     ],
     "packageJson": {
       "dependencies": [

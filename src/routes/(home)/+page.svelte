@@ -125,7 +125,7 @@
         {m.home_ourpeople_header()}
       </h2>
       <div
-        class="relative inline-block rounded text-base gap-[6px] bg-secondary text-text-dark uppercase lg:bg-primary lg:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
+        class="group/dropdown overflow-hidden relative inline-block rounded text-base gap-[6px] bg-secondary text-text-dark uppercase lg:bg-primary lg:text-text-light group-hover:bg-secondary group-hover:text-text-dark"
       >
         <select
           class="px-4 py-3 w-full h-full cursor-pointer appearance-auto bg-transparent transition duration-300 ease"
@@ -137,6 +137,12 @@
           <option value="rebo">{m.title_rebo()}</option>
           <option value="fsw">{m.title_fsw()}</option>
         </select>
+
+        <div
+          class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover/dropdown:duration-1000 group-hover/dropdown:[transform:skew(-12deg)_translateX(100%)]"
+        >
+          <div class="relative h-full w-8 bg-white/20"></div>
+        </div>
       </div>
     </div>
     <div
@@ -168,7 +174,7 @@
       <ButtonLink
         class="anim h-full max-w-[10rem] sm:max-w-none lg:bg-primary lg:text-text-light group-hover:bg-secondary group-hover:text-text-dark transition-all"
         size="small"
-        colour="secondary"
+        colour="custom"
         href={localizeHref("/our-people")}
       >
         <p class="text-center font-medium">{m.home_ourpeople_button()}</p>
