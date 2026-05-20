@@ -64,7 +64,7 @@ export const lists: Lists = {
           nl: "MSc Theoretical Physics & MSc History and Philosophy of Science",
           en: "MSc Theoretical Physics & MSc History and Philosophy of Science"
         },
-        img_src: optimisedImage("/u_council/Paolo.png"),
+        img_src: optimisedImage("/u_council/Paolo.jpeg"),
         linkedin: "https://www.linkedin.com/in/paolodioni/",
         instagram: null,
         utrecht: ""

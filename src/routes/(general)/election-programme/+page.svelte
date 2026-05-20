@@ -58,7 +58,7 @@
         <h2 class="text-center leading-9">{m.kernwaarden_read_program()}</h2>
 
         <!-- BEETJE KUT MAAR LATER PAS FIXEN  -->
-        <embed src="/Election Programme 2026-2027.pdf" type="application/pdf" class="aspect-[21/30] self-center w-full xl:w-[70%]" />
+        <embed src="https://lijstvuur.nl/Election%20Programme%202026-2027.pdf" type="application/pdf" class="aspect-[21/30] self-center w-full xl:w-[70%]" />
 
         <ButtonLink href={`/Election Programme 2026-2027.pdf`} localize={false} target="_blank">
           <p>{m.kernwaarden_download()}</p>
