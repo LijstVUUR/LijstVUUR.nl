@@ -11,7 +11,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "ldev": "mkdir project.inlang/messagelock && vite dev",
     "recompile": "deno run -A npm:@inlang/paraglide-js compile --project ./project.inlang",
-    "deploy": "deno run build && deno run -A --env upload_build.ts"
+    "deploy": "deno run build && deno run -A --env upload_build.ts",
+    "upload": "deno run -A --env upload_build.ts"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
