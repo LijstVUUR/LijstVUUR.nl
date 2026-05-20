@@ -40,7 +40,9 @@
           aria-expanded={open[i]}
           aria-controls="accordion-body-{i}"
         >
-          <h3 class={open[i] ? "text-text-light" : "text-text-dark"}>
+          <h3
+            class="text-left {open[i] ? 'text-text-light' : 'text-text-dark'}"
+          >
             {elem.title}
           </h3>
           <span

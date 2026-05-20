@@ -78,22 +78,27 @@
         <Standpunt
           title={m.vision_digital_autonomy()}
           img_src="/images_unopt/digital_autonomy.png"
+          href="/election-programme"
         />
         <Standpunt
           title={m.vision_abolish_4_0()}
           img_src="/images_unopt/4_rule.png"
+          href="/election-programme"
         />
         <Standpunt
           title={m.vision_inclusive_policy()}
           img_src="/images_unopt/inclusive_policy.png"
+          href="/election-programme"
         />
         <Standpunt
           title={m.vision_end_bsa()}
           img_src="/images_unopt/end_bsa.png"
+          href="/election-programme"
         />
         <Standpunt
           title={m.vision_protect_protesting()}
           img_src="/images_unopt/protect_protesting.png"
+          href="/election-programme"
         />
       </div>
       <div class="flex w-full justify-between">
