@@ -155,7 +155,7 @@ export const lists: Lists = {
       },
 
       {
-        name: "Eliza Geensen",
+        name: "Elisa Geensen",
         degree: {
           nl: "BA Communicatie- en Informatiewetenschappen",
           en: "BA Communication and Information Sciences"
