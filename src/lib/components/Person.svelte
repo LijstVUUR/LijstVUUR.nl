@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import Instagram from "$lib/assets/icons/social/Instagram.svelte";
   import LinkedIn from "$lib/assets/icons/social/LinkedIn.svelte";
   import UU from "$lib/assets/icons/social/UU.svelte";
   import type { Candidate } from "$lib/assets/People";
   import { getLocale } from "../paraglide/runtime";
+  import { dev } from "$app/environment";
 
   let {
     colour = "light",
@@ -34,14 +36,14 @@
   {/if}
   <div id="img" class="relative z-10">
     {#if !imageLoaded}
-      <div class="skeleton h-full w-full object-cover object-top"></div>
+      <div class="skeleton absolute inset-0 object-cover"></div>
     {/if}
     <enhanced:img src={person.img_src} alt={`Picture of ${person.name}`} loading="lazy" class="h-full w-full object-cover object-top transition-opacity duration-300" style={imageLoaded ? "opacity: 1" : "opacity: 0"} width="220" height="220" onload={() => (imageLoaded = true)}></enhanced:img>
   </div>
   <div id="text" class="flex flex-col relative z-10 w-full">
     <div class="flex justify-between w-full">
       <div class="flex flex-col gap-1">
-        <h3>{person.name}</h3>
+        <h3 id={person.name} class="scroll-m-12">{person.name}</h3>
         <p>{degree_localised}</p>
       </div>
       <p class="position text-2xl font-extrabold font-sans">{position}</p>
@@ -111,13 +113,15 @@
   .portrait .position {
     @apply text-primary;
   }
+
   #wrapper.landscape {
     transition: color 0.5s ease;
-    &:hover {
-      @apply text-text-light;
-      .ripple {
-        @apply w-[800px] h-[800px];
-      }
+  }
+  #wrapper.landscape:hover,
+  #wrapper.landscape.highlighted {
+    @apply text-text-light;
+    .ripple {
+      @apply w-[800px] h-[800px];
     }
   }
 
