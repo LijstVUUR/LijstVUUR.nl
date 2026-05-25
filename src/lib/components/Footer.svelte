@@ -10,6 +10,7 @@
 <footer class="flex-0 text-text-light bg-red-1 flex flex-col xl:flex-row flex-wrap items-start justify-between gap-4 w-full py-12 px-12 md:px-20 xl:px-24 xl:py-16">
   <img src={logo} alt="VUUR logo white with colored flame" class="h-full" />
   <div class="flex flex-wrap gap-x-12 gap-y-8">
+    <!-- Contact -->
     <div class="flex flex-col gap-2">
       <h2>{m.footer_contact()}</h2>
       <a href={localizeHref("mailto:bestuur@verenigingvuur.nl")} class="underline">bestuur@verenigingvuur.nl</a>
@@ -19,6 +20,7 @@
         <a class="w-11 h-11" target="_blank" href="https://www.instagram.com/vuurlijst"><Instagram /></a>
       </div>
     </div>
+    <!-- Our positions -->
     <div class="flex flex-col">
       <h2>{m.footer_positions()}</h2>
       <ul class="flex flex-col gap-2">
@@ -29,6 +31,7 @@
         <li><a href={localizeHref("")}>{m.footer_protect_protesting()}</a></li>
       </ul>
     </div>
+    <!-- Our people -->
     <div class="flex flex-col gap-2">
       <h2>{m.footer_people()}</h2>
       <ul class="flex flex-col gap-2">
@@ -43,6 +46,14 @@
           <a href={localizeHref("/our-people#rebo")}>{m.footer_rebo()}</a>
         </li>
         <li><a href={localizeHref("/our-people#fsw")}>{m.footer_fsw()}</a></li>
+      </ul>
+    </div>
+    <!-- Useful documents -->
+    <div class="flex flex-col">
+      <h2>Documents</h2>
+      <ul class="flex flex-col gap-2">
+        <li><a target="_blank" href="https://lijstvuur.nl/Election%20Programme%202026-2027.pdf">Election Programme</a></li>
+        <li><a target="_blank" href="/Vision_LijstVUUR.pdf">Our Vision</a></li>
       </ul>
     </div>
   </div>

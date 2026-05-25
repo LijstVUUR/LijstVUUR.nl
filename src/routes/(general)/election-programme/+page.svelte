@@ -64,6 +64,16 @@
           <p>{m.kernwaarden_download()}</p>
         </ButtonLink>
       </div>
+
+      <!-- TODO ACTUALLY FIX THIS, THIS WAS REQUESTED AND QUICKLY ADDED IN!! -->
+      <div class="flex flex-col gap-2">
+        <h2>Or read our vision</h2>
+        <p class="max-w-[75ch]">Our vision helps us stay on course and guard the core values of our party. It is essential to formulate our positions sharply and define our vision clearly. Only in this way can we give direction to the future.</p>
+
+        <ButtonLink href="/Vision_LijstVUUR.pdf" localize={false} target="_blank">
+          <p>{m.kernwaarden_download()}</p>
+        </ButtonLink>
+      </div>
     </div>
   </div>
 </Block>
