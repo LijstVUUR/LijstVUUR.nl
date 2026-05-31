@@ -10,6 +10,9 @@
   import imgEndBsa from "$lib/assets/media/end_bsa.png";
   import imgProtectProtesting from "$lib/assets/media/protect_protesting.png";
   import SEO from "$src/lib/components/SEO.svelte";
+  import { getLocale } from "$lib/paraglide/runtime";
+
+  const programmePdf = $derived(getLocale() === "nl" ? "https://lijstvuur.nl/Verkiezingsprogramma%202026-2027.pdf" : "https://lijstvuur.nl/Election%20Programme%202026-2027.pdf");
 
   const elements = [
     {
@@ -67,9 +70,11 @@
         <h2 class="text-center leading-9">{m.kernwaarden_read_program()}</h2>
 
         <!-- BEETJE KUT MAAR LATER PAS FIXEN  -->
-        <embed src="https://lijstvuur.nl/Election%20Programme%202026-2027.pdf" type="application/pdf" class="aspect-[21/30] self-center w-full xl:w-[70%]" />
+        {#key programmePdf}
+          <embed src={programmePdf} type="application/pdf" class="aspect-[21/30] self-center w-full xl:w-[70%]" />
+        {/key}
 
-        <ButtonLink href="https://lijstvuur.nl/Election%20Programme%202026-2027.pdf" localize={false} target="_blank">
+        <ButtonLink href={programmePdf} localize={false} target="_blank">
           <p>{m.kernwaarden_download()}</p>
         </ButtonLink>
       </div>
