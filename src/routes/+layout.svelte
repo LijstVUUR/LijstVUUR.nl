@@ -1,5 +1,7 @@
 <script lang="ts">
   import LanguageToggle from "$src/lib/components/LanguageToggle.svelte";
+  import ButtonLink from "$lib/components/ButtonLink.svelte";
+  import * as m from "$lib/paraglide/messages.js";
   import "../app.css";
 
   let { children } = $props();
@@ -21,8 +23,14 @@
 
 {@render children()}
 
-<div class="fixed z-10 bottom-6 right-6 h-12 w-12 rounded-full bg-secondary flex items-center justify-center">
-  <div class="flex items-center justify-center leading-none">
-    <LanguageToggle />
+<div class="fixed z-10 bottom-6 right-6 flex flex-col items-end gap-3">
+  <div class="h-12 w-12 rounded-full bg-secondary flex items-center justify-center">
+    <div class="flex items-center justify-center leading-none">
+      <LanguageToggle />
+    </div>
   </div>
+
+  <ButtonLink href="https://www.uu.nl/vote" localize={false} target="_blank" size="medium" colour="secondary">
+    <p class="font-bold text-text-dark">{m.nav_vote_now()}</p>
+  </ButtonLink>
 </div>
