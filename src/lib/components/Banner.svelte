@@ -8,7 +8,7 @@
   </div>
 
   <div class="flex-1 overflow-hidden">
-    <img src="/images_unopt/zebrapad.png" alt="" class="w-full h-full object-cover object-bottom" />
+    <enhanced:img src="$lib/assets/media/zebrapad.png" alt="" class="w-full h-full object-cover object-bottom" />
   </div>
 
   <div class="flex md:hidden px-6 py-4 bg-primary h-20">

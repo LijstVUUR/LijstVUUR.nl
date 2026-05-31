@@ -51,7 +51,7 @@
         {#if open[i]}
           <div transition:slide={{ duration: 250 }} id="accordion-body-{i}" class="flex flex-col px-4 py-4 gap-6">
             <p class="max-w-[75ch] leading-7">{@html elem.content}</p>
-            <img
+            <enhanced:img
               src={elem.img_src}
               alt={elem.img_alt}
               class="w-full h-[350px] object-cover object-center
@@ -66,6 +66,6 @@
   </div>
 
   <div class="hidden lg:block flex-1 w-full max-w-[375px]">
-    <img src={current.img_src} alt={current.img_alt} class="w-full h-full object-cover object-center rounded" />
+    <enhanced:img src={current.img_src} alt={current.img_alt} class="w-full h-full object-cover object-center rounded" />
   </div>
 </div>

@@ -15,6 +15,12 @@
 
   import { lists } from "$lib/assets/People";
 
+  import img4Rule from "$lib/assets/media/4_rule.png";
+  import imgInclusivePolicy from "$lib/assets/media/inclusive_policy.png";
+  import imgDigitalAutonomy from "$lib/assets/media/digital_autonomy.png";
+  import imgEndBsa from "$lib/assets/media/end_bsa.png";
+  import imgProtectProtesting from "$lib/assets/media/protect_protesting.png";
+
   const full_list = {
     u_council: lists.u_council.candidates,
     beta: lists.science.candidates,
@@ -77,27 +83,27 @@
       >
         <Standpunt
           title={m.vision_abolish_4_0()}
-          img_src="/images_unopt/4_rule.png"
+          img_src={img4Rule}
           href="/election-programme"
         />
         <Standpunt
           title={m.vision_inclusive_policy()}
-          img_src="/images_unopt/inclusive_policy.png"
+          img_src={imgInclusivePolicy}
           href="/election-programme"
         />
         <Standpunt
           title={m.vision_digital_autonomy()}
-          img_src="/images_unopt/digital_autonomy.png"
+          img_src={imgDigitalAutonomy}
           href="/election-programme"
         />
         <Standpunt
           title={m.vision_end_bsa()}
-          img_src="/images_unopt/end_bsa.png"
+          img_src={imgEndBsa}
           href="/election-programme"
         />
         <Standpunt
           title={m.vision_protect_protesting()}
-          img_src="/images_unopt/protect_protesting.png"
+          img_src={imgProtectProtesting}
           href="/election-programme"
         />
       </div>

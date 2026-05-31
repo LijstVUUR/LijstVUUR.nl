@@ -11,7 +11,7 @@
 <div
   class="relative rounded-md shrink-0 overflow-hidden w-[256px] h-[360px] md:w-[320px] md:h-[500px]"
 >
-  <img
+  <enhanced:img
     src={img_src}
     alt=""
     class="absolute inset-0 w-full h-full object-cover"
