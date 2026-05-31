@@ -9,6 +9,7 @@
   import imgDigitalAutonomy from "$lib/assets/media/digital_autonomy.png";
   import imgEndBsa from "$lib/assets/media/end_bsa.png";
   import imgProtectProtesting from "$lib/assets/media/protect_protesting.png";
+  import SEO from "$src/lib/components/SEO.svelte";
 
   const elements = [
     {
@@ -48,6 +49,8 @@
     },
   ];
 </script>
+
+<SEO title="Election Programme" description="LijstVUUR's election programme: abolish the 4.0 rule, inclusive policy, digital autonomy, end BSA, and protect the right to protest at UU."></SEO>
 
 <Block>
   <div class="flex flex-col gap-8 pt-16 pb-8">
